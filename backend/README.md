@@ -4,6 +4,7 @@ NOTE: (FOR THE BACKEND DEVS ALONE)
 * fetch_metadata is the project file
 * metafetch_api is the created app
 * Please do not forget to create your virtual environment first before cloning this project
+* Install all modules listed in the requirements.txt file
 * This is just my humble contribution, feel free to add yours
 * We are still developing this, cooking more features
 
