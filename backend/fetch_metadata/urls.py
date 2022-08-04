@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from metafetch_api import views
 
 urlpatterns = [
+    path('', views.index),
     path('api/', include("metafetch_api.urls")),
     path('admin/', admin.site.urls),
 ]
