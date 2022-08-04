@@ -16,6 +16,7 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 import django_heroku
+
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 

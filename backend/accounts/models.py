@@ -41,6 +41,8 @@ class UserProfile(models.Model):
 class ResetPasswordSetting(models.Model):
     confirm_password_url = models.URLField(max_length=500)
 
+    def __str__(self) -> str:
+        return f"{self.confirm_password_url} is set as Reset Password Redirect".__str__()
     class Meta:
         verbose_name_plural = 'Reset Password Settings'
 
