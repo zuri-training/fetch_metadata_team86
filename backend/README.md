@@ -234,6 +234,55 @@ fetch(`http://127.0.0.1:8000/api/auth/change-password/?old_password=${OLD_PASSWO
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
 ```
+## Change User Profile
+
+- This gives an authenticated user the previledge to change their `first_name`, `last_name` and `email`.
+
+- **End Point:** /api/auth/logout/
+
+- **Methods:** PUT
+
+- Sample Responce of stattus `200` - Success
+
+```javascript
+{
+    "status": "success",
+    "code": 200,
+    "message": "Profile updated successfully",
+    "data": [
+        {
+            "first_name": "myFirst",
+            "last_name": "myLast",
+            "email": "first@gmail.com"
+        }
+    ]
+}
+```
+- Sample Responce of stattus `401` - Unautorized
+
+```
+{
+    "detail": "Authentication credentials were not provided."
+}
+```
+
+- **JavaScript Code using Fetch**
+```javascript
+var myHeaders = new Headers();
+myHeaders.append("Authorization", "token 096512768b9d6098cc7469125fdf2358673c7bc8");
+
+var requestOptions = {
+  method: 'PUT',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+
+fetch("http://127.0.0.1:8000/api/auth/update_profile/?email=&first_name=taiwo&last_name=", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+```
+
 
 ## Forgot Password
 
