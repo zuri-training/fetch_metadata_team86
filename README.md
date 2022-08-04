@@ -1,12 +1,57 @@
 # fetch_metadata_team86
 A web application that allows users to upload files and extract the metadata of the files 
 
-# Back-End: fetch_metadata_team86s
+# Back-End: fetch_metadata_team86
+A web application that allows users to upload files and extract the metadata of the files 
+
+# Live API
+- https://metafetch86.herokuapp.com/
+- Username: pycodet1@gmail.com
+- Password: ZURI_team_86
+# Installing the API
+
+The API in a django project and can be installed or contributed to. To install:
+
+- Start by Forking and Cloning the Repository to your machine.
+- Change directory to the `/backend` folder
+- **Create** and **activate** Python Virtual Environment. You can use his package [virtualenv](https://virtualenv.pypa.io/en/latest/user_guide.html)
+- Database Settings: Mysql was used here, but you can use PostgreSQL also. check this guide for database seeting [here](https://docs.djangoproject.com/en/4.0/ref/databases/).
+
+```python
+# mySQL Database
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': '127.0.0.1',
+        'NAME': 'metafetch_db',
+        'USER': 'zuriteam_root', # change this
+        'PASSWORD': '',
+        'PORT': '3305' # check the port, and change this
+    }
+}
+```
+If you have a `db.sqlite3` database, you can go along with the default database settings of django
+```python
+# Default SQlite Database
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+```
+
+- Install all packages used. You can do that by running this command in the `/backend` folder
+```python
+pip install -r requirements.txt
+```
+- Debugging: A very lovely and easy to use tool was used to debug which is [sentry.io](https://sentry.io/). You can find the settings in the `settings.py` file on the project `fetch_metadata`. Comment them out if you don't want to go through process, but it is worth it.
+
 
 # Media Storage Tool
 - Cloudinary
 - Documentation: [Cloundinary Documentation](https://pypi.org/project/django-cloudinary-storage/#:~:text=Django%20Cloudinary%20Storage%20is%20a,both%20media%20and%20static%20files.)
-# Live API
+
 
 # API documentation
 
@@ -72,6 +117,22 @@ it is designed on the official MetaFetch UI.
         }
     ]
 }
+```
+
+- **JavaScript Code using Fetch**
+```javascript
+email = document.getElementById("email")
+password = document.getElementById("password")
+
+var requestOptions = {
+  method: 'POST',
+  redirect: 'follow'
+};
+
+fetch(`https://metafetch86.herokuapp.com/api/auth/login/?username=${email}&password=${password}`, requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
 ```
 
 ## Logout User
@@ -173,6 +234,4 @@ fetch(`http://127.0.0.1:8000/api/auth/change-password/?old_password=${OLD_PASSWO
 ## Forgot Password
 
 The [Django documentation](https://docs.djangoproject.com/en/dev/ref/contrib/csrf/#ajax) provides more information on retrieving the CSRF token using jQuery and sending it in requests. The CSRF token is saved as a cookie called csrftoken that you can retrieve from a HTTP response, which varies depending on the language that is being used.
-
-
 
