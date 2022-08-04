@@ -1,0 +1,27 @@
+Log-in
+Register
+Fetch it, Save it, Export it.
+Extract the metadata of your files. Save and share at your convenience. The ultimate exif viewer tool.
+Get Started
+What is Metadata
+Metadata simply put is information about data. It helps us to understand the structure , nature, and context of the data. Metadata also makes it easy to search and retrieve data. The quality and reliability of data is kept in check due to metadata.
+Another definition describes metadata as “any data which conveys knowledge about an item without requiring examination of the item itself.” 
+
+Why is it important
+Classification 
+Information Security 
+Metadata can be used to track things like the dates associated with a document's associated record schedule.
+Metadata can be used to flag a security setting, validating access and edit rights, and thus controlling distribution
+Customer Experience
+Information "Findability" 
+Metadata can also be used as a way to capture users' rating of content, for example, indicating that content is "valuable” or "useless" or even "dated."
+
+ Metadata is extremely valuable as a search and retrieval enhancing mechanism by enabling users to target a query on a certain field, such as author, subject, date, etc.
+How to use MetaFetch
+FETCH
+SAVE
+SHARE
+MetaFetch is a free online tool that allows one to extract and view metadata of files. Just choose the file you want to upload, or drag and drop it to the website, and we’ll do all the work for you. You can download or share the metadata in your desired format. You can also save it for later use!
+©2022 METAFETCH LTD.
+TERMS & CONDITIONSs
+PRIVACY POLICY
