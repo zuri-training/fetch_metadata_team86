@@ -8,6 +8,10 @@ NOTE: (FOR THE BACKEND DEVS ALONE)
 * This is just my humble contribution, feel free to add yours
 * We are still developing this, cooking more features
 
+# Live API
+- https://metafetch86.herokuapp.com/
+- Username: pycodet1@gmail.com
+- Password: ZURI_team_86
 # Installing the API
 
 The API in a django project and can be installed or contributed to. To install:
@@ -51,7 +55,7 @@ pip install -r requirements.txt
 # Media Storage Tool
 - Cloudinary
 - Documentation: [Cloundinary Documentation](https://pypi.org/project/django-cloudinary-storage/#:~:text=Django%20Cloudinary%20Storage%20is%20a,both%20media%20and%20static%20files.)
-# Live API
+
 
 # API documentation
 
@@ -117,6 +121,22 @@ it is designed on the official MetaFetch UI.
         }
     ]
 }
+```
+
+- **JavaScript Code using Fetch**
+```javascript
+email = document.getElementById("email")
+password = document.getElementById("password")
+
+var requestOptions = {
+  method: 'POST',
+  redirect: 'follow'
+};
+
+fetch(`https://metafetch86.herokuapp.com/api/auth/login/?username=${email}&password=${password}`, requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
 ```
 
 ## Logout User
