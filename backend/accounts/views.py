@@ -19,7 +19,7 @@ import pytz
 
 # custom modules, class and methods
 # from .models import userProfile
-from .serializers import RegisterUserSerializer
+from .serializers import RegisterUserSerializer, UpdateUserSerializer
 from .models import CustomUser
 
 from .serializers import ChangePasswordSerializer
@@ -59,21 +59,13 @@ class CustomAuthToken(ObtainAuthToken):
         user.save(update_fields=['last_login'])
 
 
-        # SEND Credentials to user
-        send_mail(
-            # title:
-            "Account Credentials for {title} Account".format(title= f"{user.email}"),
-            # message:
-            f"Email: {user.email}, Password: {serializer.validated_data['password']}",
-            # from:
-            "pycodet1@gmail.com",
-            # to:
-            [user.email],
-            # fail silently
-                fail_silently=False
-        )
 
         token, created = Token.objects.get_or_create(user=user)
+        try:
+            user_profile = user.userprofile.user_profile_pics.url
+        except Exception as e:
+            user_profile = ""
+            
         return Response({
             'code': 200,
             'data': [{
@@ -83,7 +75,7 @@ class CustomAuthToken(ObtainAuthToken):
                 'firt_name': user.first_name,
                 'last_name': user.last_name,
                 'email': user.email,
-                'last_login': user.last_login,
+                'user_profile_pics': user_profile,
             }]
         })
 
@@ -178,3 +170,54 @@ class ChangePasswordView(generics.UpdateAPIView):
             return Response(response)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class UpdateProfileView(generics.UpdateAPIView):
+
+    queryset = CustomUser.objects.all()
+    permission_classes = (IsAuthenticated,)
+    serializer_class = UpdateUserSerializer
+
+    def get_object(self, queryset=None):
+        obj = self.request.user
+        return obj
+
+    def update(self, request, *args, **kwargs):
+        self.object = self.get_object()
+
+        data = request.data or request.query_params
+        serializer = self.get_serializer(data=data)
+
+        if serializer.is_valid():
+
+            if request.user.auth_token:
+                if serializer.validated_data['first_name'].capitalize() != '':
+                    request.user.first_name = serializer.validated_data['first_name'].capitalize()
+
+                if serializer.validated_data['last_name'].capitalize() != '':
+                    request.user.last_name = serializer.validated_data['last_name'].capitalize()
+                
+                try:
+                    if serializer.validated_data['email'].capitalize() != '':
+                        request.user.email = serializer.validated_data['email'].lower()
+                except Exception as e:
+                    pass
+
+                # request.user.first_name = serializer.validated_data['first_name']
+                
+                request.user.save()
+                user = request.user
+                response = {
+                    'status': 'success',
+                    'code': status.HTTP_200_OK,
+                    'message': 'Profile updated successfully',
+                    'data': [{
+                        'first_name': user.first_name,
+                        'last_name': user.last_name,
+                        'email': user.email
+                    }]
+                }
+
+                return Response(response)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

@@ -216,7 +216,7 @@ STATIC_URL = 'static/'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # MEDIA FILES
-MEDIA_URL = '/media/'  # or any prefix you choose
+MEDIA_URL = '/metafetch_files/'  # or any prefix you choose
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Default primary key field type
