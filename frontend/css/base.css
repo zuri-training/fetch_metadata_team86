@@ -1,0 +1,22 @@
+/* import font family */
+@import  url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+
+html, body {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    font-style: normal;
+    list-style: none;
+}
+:root {
+    --primary-dark: #002C33;
+}
