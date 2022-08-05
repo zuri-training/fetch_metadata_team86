@@ -1,14 +1,18 @@
 # fetch_metadata_team86
 A web application that allows users to upload files and extract the metadata of the files 
 
-# Back-End: fetch_metadata_team86
-A web application that allows users to upload files and extract the metadata of the files 
+# Design: fetch_metadata_team86
+- Research plan: https://docs.google.com/document/d/1ho9-msxN7DgEBDQaKtVoe83j9PgcdF4VyfP0Buu9dk0/edit?usp=sharing
+- Figjam board: https://www.figma.com/file/jvYzp8TWeraVXAa427ljqY/Research_%26_Brainstorming_Dashboard?node-id=0%3A1
+- Figma file: https://www.figma.com/file/uW8bBeZpcuwcMSI30B4yxf/Team86_FetchMetadata?node-id=17%3A2
 
-# Live API
+# Back-End: fetch_metadata_team86
+
+## Live API
 - https://metafetch86.herokuapp.com/
 - Username: pycodet1@gmail.com
 - Password: ZURI_team_86
-# Installing the API
+## Installing the API
 
 The API in a django project and can be installed or contributed to. To install:
 
@@ -18,7 +22,7 @@ The API in a django project and can be installed or contributed to. To install:
 - Database Settings: Mysql was used here, but you can use PostgreSQL also. check this guide for database seeting [here](https://docs.djangoproject.com/en/4.0/ref/databases/).
 
 ```python
-# mySQL Database
+## mySQL Database
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -32,7 +36,7 @@ DATABASES = {
 ```
 If you have a `db.sqlite3` database, you can go along with the default database settings of django
 ```python
-# Default SQlite Database
+## Default SQlite Database
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -48,14 +52,14 @@ pip install -r requirements.txt
 - Debugging: A very lovely and easy to use tool was used to debug which is [sentry.io](https://sentry.io/). You can find the settings in the `settings.py` file on the project `fetch_metadata`. Comment them out if you don't want to go through process, but it is worth it.
 
 
-# Media Storage Tool
+## Media Storage Tool
 - Cloudinary
 - Documentation: [Cloundinary Documentation](https://pypi.org/project/django-cloudinary-storage/#:~:text=Django%20Cloudinary%20Storage%20is%20a,both%20media%20and%20static%20files.)
 
 
-# API documentation
+## API documentation
 
-## Registering New User
+### Registering New User
 
 This API end-point would be used to register new users in the metafetch application and login in the user
 immidiatly after registration.
@@ -87,7 +91,7 @@ immidiatly after registration.
 > - `firt_name`
 > - `last_name`
 
-## Login User
+### Login User
 
 This end-point would be used to log in User into the application. It returns an token and the 
 properties of the user who has just been logged-in.
@@ -135,7 +139,7 @@ fetch(`https://metafetch86.herokuapp.com/api/auth/login/?username=${email}&passw
   .catch(error => console.log('error', error));
 ```
 
-## Logout User
+### Logout User
 
 This end-point would be used to log a User out from the application. There is nothing serious goining 
 on here. The User Token must be passed along as an header to know which user wants to logout. The front-end should remove the Token from where ever it is saved on the front-end or browser when it returns a success code `200`. 
@@ -178,7 +182,7 @@ fetch("http://127.0.0.1:8000/api/auth/logout/", requestOptions)
 
 
 
-## Change Password User
+### Change Password User
 
 This gives an authenticated user the oppotunity to change password.
 
@@ -230,7 +234,7 @@ fetch(`http://127.0.0.1:8000/api/auth/change-password/?old_password=${OLD_PASSWO
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
 ```
-## Change User Profile
+### Change User Profile
 
 - This gives an authenticated user the previledge to change their `first_name`, `last_name` and `email`.
 
@@ -280,7 +284,7 @@ fetch("http://127.0.0.1:8000/api/auth/update_profile/?email=&first_name=taiwo&la
 ```
 
 
-## Forgot Password
+### Forgot Password
 
 The [Django documentation](https://docs.djangoproject.com/en/dev/ref/contrib/csrf/#ajax) provides more information on retrieving the CSRF token using jQuery and sending it in requests. The CSRF token is saved as a cookie called csrftoken that you can retrieve from a HTTP response, which varies depending on the language that is being used.
 
