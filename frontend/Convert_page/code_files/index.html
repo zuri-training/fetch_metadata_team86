@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="B-files/Bootstrap_css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Convert your files seamlessly</title>
+</head>
+<body>
+    <div id="page">
+        
+      
+ 
+
+        <header>
+            
+<img src="../Images/MetaFetch Icon.svg" alt="MetaFetch Icon" class="logo" id="head-logo"/>
+    
+            <!-- <nav> -->
+                <div class="first-opt" id="options-1"> 
+                    <span>
+                        <a href="#">Convert File</a>
+                    </span>
+                    
+                    <span>
+                        <a href="#">Saved Data</a>
+                    </span>
+                </div>
+
+<div class="second-opt position-relative" id="user-settings">
+        <div class="child" id="profile">
+                <div class="user-abbr">
+            <span>Br</span>
+                </div>
+<span class="user-greeting">Hello Braxton!</span>
+        <div class="icon-down">
+            <img src="../Images/down_arr.svg" alt="Option icon" />
+        </div>
+
+                        </div>
+
+
+<div class="user-options position-absolute d-none" id="pro-settings">
+    <ul>
+        <li>
+            <a href="#">
+                <img src="../Images/account_circle.svg" alt="User Icon"/>
+                <span>
+                    Edit Profile
+                </span>
+            </a>
+    </li>
+<li>
+        <a href="#">
+<img src="../Images/key.svg" alt="Change Password icon"/>
+                <span>
+                    Change Password
+                </span>
+        </a>
+    </li>
+<li>
+        <a href="#">
+        <img src="../Images/logout.svg" alt="Logout Icon"/> 
+        <span>
+            Logout
+        </span>
+        </a>
+    </li>
+        </ul>
+</div>
+
+</div>
+
+
+    <!-- </nav> -->
+    
+        </header>
+    
+        <main>
+            <div class="first-main">
+                <h1>Convert your files to a different format with ease</h1>
+                <p class="first-text">This free online file converter lets you convert media easy and fast from one format to another.</p>
+            </div>
+       <!-- <div class="add-doc">
+
+        <div class="upload-img">
+            <input type="file" value="" id="file-input" name="file">
+            <img src="../Images/Add Files.svg" alt="Add files icon"/>
+        </div>
+        <p id="add-par">
+            Click here to upload a file. You can also drag & drop it here.
+        </p>
+
+       </div> -->
+    
+            <!-- <div class="select-format position-relative overflow-hidde"> -->
+                <!-- <p>Select output format</p>
+                    <img src="../Images/down_arr.svg" alt="Down icon" class="sel-down">
+                    <div class="formats position-absolute ">
+
+                    <ul class="list-format">
+                        <li>PDF</li>
+                        <li>JPEG</li>
+                        <li>DOC</li>
+                    </ul> -->
+ <form action='' class="form-format">
+
+
+    <div class="upload-img">
+        <input type="file" value="" id="file-input" name="file" class="file-in">
+        <img src="../Images/Add Files.svg" alt="Add files icon" class="img-file"/>
+    </div>
+
+    <p id="add-par">
+        Click here to upload a file. You can also drag & drop it here.
+    </p>
+
+        <select name="format" id="format" class="formatting">
+            <option value="" class="visually-hidden d-none">Select a format</option>
+                <option value="PDF">PDF</option>
+                <option value="JPEG">JPEG</option>
+                <option value="DOC">DOC</option>
+        </select>
+        <button class="convert-btn mt-4 mb-3 mx-auto"  id="conv-btn"  type="submit" >Convert</button>
+</form> 
+                    <!-- </div> -->
+            <!-- </div> -->
+
+            
+       
+   
+        </main>
+
+        <footer>
+            <ul>
+    <li>
+        <!-- <a href="#"> -->
+        &copy;2022 METAFETCH LTD.        
+        <!-- </a> -->
+    </li> 
+    <li>
+    <a href="#">
+        TERMS & CONDITIONS
+    </a>
+    </li>
+    <li>
+        <a href="#">
+            PRIVACY POLICY
+        </a>
+    </li>
+            </ul>
+        </footer>
+    </div>
+
+    <div class="converting  d-none">
+        <div class="conv-modal ">
+            <div class="modal-conv">
+                <span class="visually-hidden vi-text">Converting File</span>
+            </div>
+            <p class="conv-text">Converting file...</p>
+            <!-- <div class="complete">
+                <img src="../Images/Conv-complete.svg" alt="Completed conversion" class="success"/>
+                <p class="conv-text">Convertion complete</p> 
+            </div> -->
+    
+            <!-- <button id="download">Download</button> -->
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
+<script src="B-files/Bootstrap_js/bootstrap.bundle.js"></script>
+</html>
+<!-- <img src="../Images/hamburger.svg" alt="Menu Icon" class="menu-icon"/> -->

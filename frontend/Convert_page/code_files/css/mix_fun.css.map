@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../mix_fun.scss"
+    ],
+    "names": [],
+    "file": "mix_fun.css"
+}
