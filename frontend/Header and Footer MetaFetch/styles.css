@@ -6,7 +6,7 @@
 .logo-img {
   float: left;
   position: relative;
-  margin: 0px 5px 5px 5px;
+  margin: 5px 5px 5px 5px;
   width: 180px;
   height: 60px;
 }
@@ -14,7 +14,7 @@
   border: 2px solid whitesmoke;
   background-color: white;
   color: #002C33;
-  padding: 14px 55px;
+  padding: 14px 28px;
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   cursor: pointer;
