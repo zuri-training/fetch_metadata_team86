@@ -70,7 +70,7 @@ immidiatly after registration.
 
 - Sample Responce
 
-```
+```json
 {
     "code": 200,
     "data": [
@@ -106,7 +106,7 @@ it is designed on the official MetaFetch UI.
 
 - Sample Responce
 
-```
+```json
 {
     "code": 200,
     "data": [
@@ -150,14 +150,14 @@ on here. The User Token must be passed along as an header to know which user wan
 
 - Sample Responce of stattus `200` - Success
 
-```
+```json
 {
     "detail": "User Logged out successfully"
 }
 ```
 - Sample Responce of stattus `401` - Unautorized
 
-```
+```json
 {
     "detail": "Authentication credentials were not provided."
 }
@@ -186,13 +186,13 @@ fetch("http://127.0.0.1:8000/api/auth/logout/", requestOptions)
 
 This gives an authenticated user the oppotunity to change password.
 
-- **End Point:** api/auth/change-password/?old_password=**OLD_PASSWORD**&new_password=**NEW_PASSWORD**
+- **End Point:** api/auth/change_password/?old_password=**OLD_PASSWORD**&new_password=**NEW_PASSWORD**
 
 - **Methods:** PUT
 
 - Sample Responce of `200` - Success
 
-```
+```json
 {
     "status": "success",
     "code": 200,
@@ -203,14 +203,14 @@ This gives an authenticated user the oppotunity to change password.
 
 
 - Sample Responce of stattus `401` - Unautorized
-```
+```json
 {
     "detail": "Authentication credentials were not provided."
 }
 ```
 - Sample Responce of stattus `400` - Bad Request
 
-```
+```json
 {
     "old_password": [
         "This field is required."
@@ -260,7 +260,7 @@ fetch(`http://127.0.0.1:8000/api/auth/change-password/?old_password=${OLD_PASSWO
 ```
 - Sample Responce of stattus `401` - Unautorized
 
-```
+```json
 {
     "detail": "Authentication credentials were not provided."
 }
