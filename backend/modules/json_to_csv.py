@@ -14,13 +14,16 @@ dictionary = {
     "width": 100,
     "file_extention": "txt"
 }
-# convert python dictionary to json
-Json = json.dumps(dictionary, indent=4)
 
-# convert JSON to python dictionary
-my_dict = json.loads(Json)
+def dict_to_csv(dictionary):
+    # convert python dictionary to json
+    Json = json.dumps(dictionary, indent=4)
 
-# open a csv file
-with open('test.csv', 'w') as csvfile:
-    for key in my_dict.keys():
-        csvfile.write("%s,%s\n" % (key, my_dict[key]))
+    # convert JSON to python dictionary
+    my_dict = json.loads(Json)
+
+    # open a csv file
+    with open('test.csv', 'w') as csvfile:
+        for key in my_dict.keys():
+            csvfile.write("%s,%s\n" % (key, my_dict[key]))
+            return csvfile

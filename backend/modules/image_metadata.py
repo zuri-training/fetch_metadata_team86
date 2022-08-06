@@ -1,62 +1,31 @@
-#-----------------------------------------
-# Batch Process Image Metadata with exif
+from hachoir.parser import createParser
+from hachoir.metadata import extractMetadata
 
-import argparse
-import pandas as pd
-import os
-from datetime import datetime as dt
-from exif import Image
+def image_meta_extract(file_path, file_type=None):
+    """
+    This function is used to extract image metadata of type 'png'
+    NOTE: 
+    1. Avoid images from whatsapp because whatsapp strip off all metadata attached to an image
+    2. Avoid images whose file extention has been manually changed
+    3. Avoid images that does not have a file extention
 
-def parse_args():
-    parser = argparse.ArgumentParser(description="Batch Process Image Metadata")
 
-    parser.add_argument('--folder', '--f',
-                         metavar='', 
-                        #  required=True,
-                         default='sample_images',
-                         help='Name of folder where images are stored', 
-                         type=str
-                        )
+    function returns {0: 0} if file is not a genuie image type of 'png'
 
-    return parser.parse_args()
+    """
 
-def main():
-    '''
-    # Batch processing of image metadata
-    # Extracts metadata of images in folder and output CSV file of consolidated metadata info
-    '''
-    args = parse_args()
-    img_filetypes = ['jpg', 'jpeg', 'png', 'tif', 'tiff', 'bmp', '']
-    df = pd.DataFrame()
-    print(f'[+] Begin batch extraction of image metadata from folder /{args.folder}')
-    
-    for filename in os.listdir(args.folder):
-        if filename.split('.')[-1] not in img_filetypes:
-            print(f'[+] Skipping {filename} because it is not an image file')
-        else:
-            img_path = f'{args.folder}/{filename}'
-            with open(img_path, 'rb') as img_file:
-                img = Image(img_file)
-                if not img.has_exif:
-                    print(f'[+] Skipping {filename} because it does not have EXIF metadata')
+    try:
+            parser = createParser(file_path)
+            metadata = extractMetadata(parser= parser)
+            dict_f = {}
+            for line in metadata.exportPlaintext():
+                meta = line.split(':')
+                if meta[-1] == "":
+                    continue
                 else:
-                    dict_i = {}
-                    dict_i["filename"] = filename
-                    
-                    attr_list = img.list_all()
-                    for attr in attr_list:
-                        value = img.get(attr)
-                        dict_i[attr] = value
-                        
-                    df_i = pd.DataFrame([dict_i], columns=dict_i.keys())
-                    df = df.append(df_i, ignore_index=True)
-
-    if len(df) > 0:
-        df.to_csv(f'data/batch_metadata_{dt.today().strftime("%Y-%m-%d")}.csv', index=False)
-        print(f'[+] Metadata of {len(df)} images successfully saved in /data folder')
-    else:
-        print('[+] Processing complete, No metadata information extracted')
-
-
-if __name__ == "__main__":
-    main()
+                    dict_f[meta[0].split('-')[1].strip()] = meta[-1]
+            return dict_f
+    except Exception as e:
+        
+        return {'message': "An error occured."}
+        
