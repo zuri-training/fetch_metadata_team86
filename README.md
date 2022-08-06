@@ -181,7 +181,6 @@ fetch("http://127.0.0.1:8000/api/auth/logout/", requestOptions)
 ```
 
 
-
 ### Change Password User
 
 This gives an authenticated user the oppotunity to change password.
@@ -283,8 +282,182 @@ fetch("http://127.0.0.1:8000/api/auth/update_profile/?email=&first_name=taiwo&la
   .catch(error => console.log('error', error));
 ```
 
+## Forgot Password
+This operation requires 2 API endpoints, one to send a safe token to email, and the second to change password based on the token sent to email.
+This gives an authenticated user the oppotunity to change password.
 
-### Forgot Password
+- **End Point:** api/auth/password_reset/
 
+- **Methods:** POST
+
+- Sample Responce of `200` - Success
+
+```json
+{
+    "status": "OK"
+}
+```
+
+
+- Sample Responce of stattus `401` - Unautorized
+```json
+{
+    "detail": "Authentication credentials were not provided."
+}
+```
+- Sample Responce of stattus `400` - Bad Request
+
+```json
+{
+    "email": [
+        "This field is required."
+    ]
+}
+```
+- JavaScript Fetch Sample Code
+
+```javascript
+var formdata = new FormData();
+formdata.append("email", "pycodet1@gmail.com");
+
+var requestOptions = {
+  method: 'POST',
+  body: formdata,
+  redirect: 'follow'
+};
+
+fetch("http://127.0.0.1:8000/api/auth/password_reset/", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+```
+
+**Change Forgotten Password with Token sent**
+
+- **End Point:** api/auth/password_reset/confirm/
+
+- **Methods:** POST
+
+- Sample Responce of `200` - Success
+
+```json
+{
+    "status": "OK"
+}
+```
+
+
+- Sample Responce of stattus `401` - Unautorized
+```json
+{
+    "detail": "Authentication credentials were not provided."
+}
+```
+- Sample Responce of stattus `400` - Bad Request
+
+```json
+{
+    "old_password": [
+        "This field is required."
+    ]
+}
+```
+- JavaScript Fetch Sample Code
+
+```javascript
+var formdata = new FormData();
+formdata.append("token", "3339e80fe05e5ca9fc74799213f81a093d1f");
+formdata.append("password", "Password@123");
+
+
+var requestOptions = {
+  method: 'POST',
+  body: formdata,
+  redirect: 'follow'
+};
+
+fetch("http://127.0.0.1:8000/api/auth/password_reset/confirm/", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+```
+
+
+# Extract Meta Data API Endpoints
+
+- /api/extract_metadata/image_meta_extract/
+- /api/extract_metadata/jpg_meta_extract/
+- /api/extract_metadata/get_files/
+- /api/extract_metadata/delete_file/{file_id}/
+
+
+## Details
+- **For IMAGES**
+- Endpoint (for png, jpg, tiff): `/api/extract_metadata/image_meta_extract/`
+- Special Endpoint for jpg: /api/extract_metadata/jpg_meta_extract/
+- Method: GET
+
+- JavaScript Fetch Sample Code
+
+```javascript
+var myHeaders = new Headers();
+myHeaders.append("Authorization", "token 23c1ad67a9798aea9a6e5ed0f9a61a5cfb450689");
+
+var formdata = new FormData();
+formdata.append("file", fileInput.files[0], "/C:/Users/Adegite/Zuri training/Project Phase/fetch_metadata_team86-1/backend/modules/test_files/DSC_0911.JPG");
+
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  body: formdata,
+  redirect: 'follow'
+};
+
+fetch("http://127.0.0.1:8000/api/extract_metadata/jpg_meta_extract/", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+```
+
+- **Get all document associated to the current User**
+- Endpoint: /api/extract_metadata/get_files/
+
+- **JavaScript Sample Code**
+```javascript
+var myHeaders = new Headers();
+myHeaders.append("Authorization", "token 23c1ad67a97ea9a6e5ed0f9a61a5cfb450689");
+
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+
+fetch("http://127.0.0.1:8000/api/extract_metadata/get_files/", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+```
+
+- **TO Delete a File**
+
+- EndPoint: /api/extract_metadata/delete_file/{file_id}/
+> *{file_id} should be replaced with the actual id of the file to be deleted. User can only delete files associated with them.*
+
+- **JavaScript Sample Code**
+
+```javascript
+var myHeaders = new Headers();
+myHeaders.append("Authorization", "token 23c1ad67a9798aea9a6e5ed0f9a61a5c450689");
+
+var requestOptions = {
+  method: 'DELETE',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+
+fetch("http://127.0.0.1:8000/api/extract_metadata/delete_file/8/", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+```
 The [Django documentation](https://docs.djangoproject.com/en/dev/ref/contrib/csrf/#ajax) provides more information on retrieving the CSRF token using jQuery and sending it in requests. The CSRF token is saved as a cookie called csrftoken that you can retrieve from a HTTP response, which varies depending on the language that is being used.
-
