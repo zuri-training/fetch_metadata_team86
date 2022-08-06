@@ -5,6 +5,5 @@ from metafetch_api import views
 
 urlpatterns = [
     path('auth/', include("accounts.urls")),
-
-
+    path('extract_metadata/', include("documents.urls")),
 ]

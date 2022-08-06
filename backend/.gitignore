@@ -3,6 +3,7 @@ test.csv
 metafetch_api/auth_app/__pycache__
 db.sqlite3
 fetch_metadata/.env
+modules/test_files/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

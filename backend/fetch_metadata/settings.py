@@ -84,6 +84,7 @@ INSTALLED_APPS = [
     # django custom apps
     'metafetch_api',
     'accounts',
+    'documents',
 
 ]
 
