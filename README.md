@@ -1,16 +1,65 @@
 # fetch_metadata_team86
 A web application that allows users to upload files and extract the metadata of the files 
 
-# Back-End: fetch_metadata_team86s
+# Design: fetch_metadata_team86
+- Research plan: https://docs.google.com/document/d/1ho9-msxN7DgEBDQaKtVoe83j9PgcdF4VyfP0Buu9dk0/edit?usp=sharing
+- Figjam board: https://www.figma.com/file/jvYzp8TWeraVXAa427ljqY/Research_%26_Brainstorming_Dashboard?node-id=0%3A1
+- Figma file: https://www.figma.com/file/uW8bBeZpcuwcMSI30B4yxf/Team86_FetchMetadata?node-id=17%3A2
 
-# Media Storage Tool
+# Back-End: fetch_metadata_team86
+
+## Live API
+- https://metafetch86.herokuapp.com/
+- Username: pycodet1@gmail.com
+- Password: ZURI_team_86
+## Installing the API
+
+The API in a django project and can be installed or contributed to. To install:
+
+- Start by Forking and Cloning the Repository to your machine.
+- Change directory to the `/backend` folder
+- **Create** and **activate** Python Virtual Environment. You can use his package [virtualenv](https://virtualenv.pypa.io/en/latest/user_guide.html)
+- Database Settings: Mysql was used here, but you can use PostgreSQL also. check this guide for database seeting [here](https://docs.djangoproject.com/en/4.0/ref/databases/).
+
+```python
+## mySQL Database
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': '127.0.0.1',
+        'NAME': 'metafetch_db',
+        'USER': 'zuriteam_root', # change this
+        'PASSWORD': '',
+        'PORT': '3305' # check the port, and change this
+    }
+}
+```
+If you have a `db.sqlite3` database, you can go along with the default database settings of django
+```python
+## Default SQlite Database
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+```
+
+- Install all packages used. You can do that by running this command in the `/backend` folder
+```python
+pip install -r requirements.txt
+```
+- Debugging: A very lovely and easy to use tool was used to debug which is [sentry.io](https://sentry.io/). You can find the settings in the `settings.py` file on the project `fetch_metadata`. Comment them out if you don't want to go through process, but it is worth it.
+
+
+## Media Storage Tool
 - Cloudinary
 - Documentation: [Cloundinary Documentation](https://pypi.org/project/django-cloudinary-storage/#:~:text=Django%20Cloudinary%20Storage%20is%20a,both%20media%20and%20static%20files.)
-# Live API
 
-# API documentation
 
-## Registering New User
+## API documentation
+
+### Registering New User
 
 This API end-point would be used to register new users in the metafetch application and login in the user
 immidiatly after registration.
@@ -21,7 +70,7 @@ immidiatly after registration.
 
 - Sample Responce
 
-```
+```json
 {
     "code": 200,
     "data": [
@@ -42,7 +91,7 @@ immidiatly after registration.
 > - `firt_name`
 > - `last_name`
 
-## Login User
+### Login User
 
 This end-point would be used to log in User into the application. It returns an token and the 
 properties of the user who has just been logged-in.
@@ -57,7 +106,7 @@ it is designed on the official MetaFetch UI.
 
 - Sample Responce
 
-```
+```json
 {
     "code": 200,
     "data": [
@@ -74,7 +123,23 @@ it is designed on the official MetaFetch UI.
 }
 ```
 
-## Logout User
+- **JavaScript Code using Fetch**
+```javascript
+email = document.getElementById("email")
+password = document.getElementById("password")
+
+var requestOptions = {
+  method: 'POST',
+  redirect: 'follow'
+};
+
+fetch(`https://metafetch86.herokuapp.com/api/auth/login/?username=${email}&password=${password}`, requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+```
+
+### Logout User
 
 This end-point would be used to log a User out from the application. There is nothing serious goining 
 on here. The User Token must be passed along as an header to know which user wants to logout. The front-end should remove the Token from where ever it is saved on the front-end or browser when it returns a success code `200`. 
@@ -85,14 +150,14 @@ on here. The User Token must be passed along as an header to know which user wan
 
 - Sample Responce of stattus `200` - Success
 
-```
+```json
 {
     "detail": "User Logged out successfully"
 }
 ```
 - Sample Responce of stattus `401` - Unautorized
 
-```
+```json
 {
     "detail": "Authentication credentials were not provided."
 }
@@ -117,17 +182,17 @@ fetch("http://127.0.0.1:8000/api/auth/logout/", requestOptions)
 
 
 
-## Change Password User
+### Change Password User
 
 This gives an authenticated user the oppotunity to change password.
 
-- **End Point:** api/auth/change-password/?old_password=**OLD_PASSWORD**&new_password=**NEW_PASSWORD**
+- **End Point:** api/auth/change_password/?old_password=**OLD_PASSWORD**&new_password=**NEW_PASSWORD**
 
 - **Methods:** PUT
 
 - Sample Responce of `200` - Success
 
-```
+```json
 {
     "status": "success",
     "code": 200,
@@ -138,14 +203,14 @@ This gives an authenticated user the oppotunity to change password.
 
 
 - Sample Responce of stattus `401` - Unautorized
-```
+```json
 {
     "detail": "Authentication credentials were not provided."
 }
 ```
 - Sample Responce of stattus `400` - Bad Request
 
-```
+```json
 {
     "old_password": [
         "This field is required."
@@ -165,6 +230,54 @@ var requestOptions = {
 };
 
 fetch(`http://127.0.0.1:8000/api/auth/change-password/?old_password=${OLD_PASSWORD}&new_password=${NEW_PASSWORD}`, requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+```
+### Change User Profile
+
+- This gives an authenticated user the previledge to change their `first_name`, `last_name` and `email`.
+
+- **End Point:** /api/auth/logout/
+
+- **Methods:** PUT
+
+- Sample Responce of stattus `200` - Success
+
+```javascript
+{
+    "status": "success",
+    "code": 200,
+    "message": "Profile updated successfully",
+    "data": [
+        {
+            "first_name": "myFirst",
+            "last_name": "myLast",
+            "email": "first@gmail.com"
+        }
+    ]
+}
+```
+- Sample Responce of stattus `401` - Unautorized
+
+```json
+{
+    "detail": "Authentication credentials were not provided."
+}
+```
+
+- **JavaScript Code using Fetch**
+```javascript
+var myHeaders = new Headers();
+myHeaders.append("Authorization", "token 096512768b9d6098cc7469125fdf2358673c7bc8");
+
+var requestOptions = {
+  method: 'PUT',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+
+fetch("http://127.0.0.1:8000/api/auth/update_profile/?email=&first_name=taiwo&last_name=", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
