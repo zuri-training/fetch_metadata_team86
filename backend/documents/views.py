@@ -1,6 +1,6 @@
 from logging import exception
-from msilib.schema import File
-from operator import index
+# from msilib.schema import File
+# from operator import index
 from django.shortcuts import render
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
