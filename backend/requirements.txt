@@ -36,3 +36,18 @@ sqlparse==0.4.2
 tzdata==2022.1
 urllib3==1.26.11
 whitenoise==6.2.0
+
+# for data extraction module
+# doc file
+python-docx==0.8.11
+# pdf
+PyPDF2==2.8.1
+#pptx
+python-pptx==0.6.21
+#xlsx
+XlsxWriter==3.0.3
+# others that came with the one above
+et-xmlfile==1.1.0
+lxml==4.9.1
+openpyxl==3.0.10
+Pillow==9.2.0
