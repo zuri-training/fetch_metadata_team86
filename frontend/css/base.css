@@ -1,7 +1,7 @@
 /* import font family */
 @import  url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
 
-html, body {
+html, body, header, nav, main, footer {
     width: 100%;
     box-sizing: border-box;
     margin: 0px;
@@ -17,6 +17,18 @@ html, body {
     font-style: normal;
     list-style: none;
 }
+button {
+    background: transparent;
+    cursor: pointer;
+}
 :root {
+    /* font */
+    --primary-font: "DM Sans", 'sans-serif';
+    /* colors */
     --primary-dark: #002C33;
+    --primary-bg: #F9FCFC;
+}
+body {
+    background: var(--primary-bg);
+    font-family: var(--primary-font);
 }

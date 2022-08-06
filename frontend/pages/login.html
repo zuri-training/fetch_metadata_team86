@@ -8,33 +8,47 @@
     <link rel="stylesheet" href="../css/form.css">
 </head>
 <body>
+    <header>
+        <nav class="form-nav">
+            <div>
+                <button>
+                    <img class="menu-icon" src="../assets/icons/menu.svg" alt="">
+                </button>
+                <div class="dropdown-list">
+
+                </div>
+            </div>
+            <a href="../">
+                <img src="../assets/logo.svg" alt="metafetch's logo">
+            </a>
+            <img src="../assets/icons/profile.svg" alt="profile">
+        </nav>
+    </header>
     <main>
-        <section>
+        <section class="form-section">
             <form>
                 <div>
-                    <button>Register</button>
-                    <button class="active-form">Login</button>
+                    <a href="./signup.html">Register</a>
+                    <a href="./login.html" class="active-form">Login</a>
                 </div>
                 <div>
                     <div>
-                        <input name="" id="" type="" placeholder="" required>
+                        <input name="email" id="email" type="email" placeholder="Email" required>
                     </div>
                     <div>
-                        <input name="" id="" type="" placeholder="" required>
+                        <input name="password" id="password" type="password" placeholder="Password" required>
                     </div>
+                    <span>
+                        <a href="#">Forgot Password? Click to reset password</a>
+                    </span>
                 </div>
-                <span>
-                    Forgot Password? Click to reset password
-                </span>
                 <button>Register</button>
             </form>
             <div>
-                <div>
-                    <img class="form-logo" src="../assets/logo-full.svg" alt="metafetch's logo">
-                    <h1>
-                        Having an intricate knowledge about your file is vital in terms of privacy...
-                    </h1>
-                </div>
+                <img class="form-full-logo" src="../assets/logo-full.svg" alt="metafetch's logo">
+                <h1>
+                    Having an intricate knowledge about your file is vital in terms of privacy...
+                </h1>
             </div>
         </section>
     </main>

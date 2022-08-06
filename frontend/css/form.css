@@ -1,1 +1,185 @@
 @import "base.css";
+
+
+nav.form-nav {
+    padding: 40px 6.4%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+}
+nav.form-nav img {
+    max-width: 40px;
+    max-height: 40px;
+}
+section.form-section {
+    width: 100%;
+    padding: 0px 6.4%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+section.form-section > form {
+    width: 100%;
+    order: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 40px;
+    max-width: 612px;
+}
+section.form-section > form > div:nth-child(1) {
+    width: 100%;
+    height: 58px;
+    max-width: 400px;
+    display: flex;
+    margin: 0px;
+}
+section.form-section > form > div:nth-child(1) > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    background: transparent;
+    border: 1px solid var(--primary-dark);
+    color: var(--primary-dark);
+    font-family: var(--primary-font);
+    font-weight: 500;
+    font-size: 16px;
+}
+section.form-section > form > div:nth-child(1) > a.active-form {
+    background: var(--primary-dark);
+    color: #F9FCFC;
+}
+section.form-section > form > div:nth-child(2) {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 16px;
+}
+section.form-section > form > div:nth-child(2) > div,
+section.form-section > form > div:nth-child(2) > div > input,
+section.form-section > form > div:nth-child(2) > span {
+    width: 100%;
+}
+section.form-section > form > div:nth-child(2) > div > input {
+    height: 58px;
+    border: 1.8609px solid var(--primary-dark);
+    padding: 0px 24px;
+    color: var(--primary-dark);
+    font-family: var(--primary-font);
+    font-weight: 400;
+    font-size: 16px;
+    background: transparent;
+}
+section.form-section > form > div:nth-child(2) > div > input::placeholder {
+    opacity: .6;
+}
+section.form-section > form > div:nth-child(2) > span {
+    display: block;
+    color: var(--primary-dark);
+    font-family: var(--primary-font);
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.5;
+    margin: 0px;
+}section.form-section > form > div:nth-child(2) > span a {
+    color: var(--primary-dark);
+    cursor: pointer;
+}
+section.form-section > form > button {
+    width: 100%;
+    height: 58px;
+    background: var(--primary-dark);
+    color: #F9FCFC;
+    font-family: var(--primary-font);
+    font-weight: 500;
+    font-size: 16px;
+    max-width: 400px;
+}
+section.form-section > div {
+    order: 0;
+}
+section.form-section > div > img.form-full-logo {
+    display: none;
+}
+section.form-section > div > h1 {
+    max-width: 320px;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.4;
+    padding: 2px;
+    color: var(--primary-dark);
+}
+/* screens greater than 599px */
+@media screen and (min-width: 600px) {
+    nav.form-nav {
+        padding: 40px 15%;
+    }
+    section.form-section > div > h1 {
+        margin: 30px 0px 10px;
+    }
+    /* screens greater than 1099px */
+    @media screen and (min-width: 1100px) {
+        nav.form-nav {
+            display: none;
+        }
+        section.form-section {
+            max-width: 1550px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 108px 5.5% 180px;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            gap: 80px;
+        }
+        section.form-section > form {
+            width: 55%;
+            order: 0;
+            box-shadow: 0px 0px 50px 0px #00000026;
+            padding: 5% 7%;
+        }
+        section.form-section > form > div:nth-child(1) {
+            margin-bottom: 40px;
+            height: 71px;
+        }
+        section.form-section > form > div:nth-child(1) > a {
+            font-weight: 700;
+            font-size: 32px;
+        }
+        section.form-section > form > div:nth-child(2) > div > input {
+            font-weight: 500;
+            font-size: 24px;
+        }
+        section.form-section > form > div:nth-child(2) > span {
+            margin-top: 16px;
+        }
+        section.form-section > form > button {
+            font-weight: 700;
+            font-size: 24px;
+        }
+        section.form-section > div {
+            order: 1;
+        }
+        section.form-section > div > img.form-full-logo {
+            display: block;
+            width: auto;
+            height: 40px;
+        }
+        section.form-section > div > h1 {
+            max-width: 474px;
+            font-size: 48px;
+            text-align: left;
+            font-weight: 700;
+            line-height: 1.65;
+        }
+    }
+}

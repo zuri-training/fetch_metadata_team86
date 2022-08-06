@@ -8,39 +8,53 @@
     <link rel="stylesheet" href="../css/form.css">
 </head>
 <body>
+    <header>
+        <nav class="form-nav">
+            <div>
+                <button>
+                    <img class="menu-icon" src="../assets/icons/menu.svg" alt="">
+                </button>
+                <div class="dropdown-list">
+
+                </div>
+            </div>
+            <a href="../">
+                <img src="../assets/logo.svg" alt="metafetch's logo">
+            </a>
+            <img src="../assets/icons/profile.svg" alt="profile">
+        </nav>
+    </header>
     <main>
-        <section>
+        <section class="form-section">
             <form>
                 <div>
-                    <button class="active-form">Register</button>
-                    <button>Login</button>
+                    <a href="./signup.html" class="active-form">Register</a>
+                    <a href="./login.html">Login</a>
                 </div>
                 <div>
                     <div>
-                        <input name="" id="" type="" placeholder="" required>
+                        <input name="email" id="email" type="email" placeholder="Email" required>
                     </div>
                     <div>
-                        <input name="" id="" type="" placeholder="" required>
+                        <input name="username" id="username" type="text" placeholder="Username" required>
                     </div>
                     <div>
-                        <input name="" id="" type="" placeholder="" required>
+                        <input name="password" id="password" type="password" placeholder="Password" required>
                     </div>
                     <div>
-                        <input name="" id="" type="" placeholder="" required>
+                        <input name="cpassword" id="cpassword" type="password" placeholder="Confirm Password" required>
                     </div>
+                    <span>
+                        By creating an account shows you agree with our <strong>Terms of use.</strong>
+                    </span>
                 </div>
-                <span>
-                    By creating an account shows you agree with our Terms of use.
-                </span>
                 <button>Register</button>
             </form>
             <div>
-                <div>
-                    <img class="form-logo" src="../assets/logo-full.svg" alt="metafetch's logo">
-                    <h1>
-                        Join the world of  seamless metadata fetching process...
-                    </h1>
-                </div>
+                <img class="form-full-logo" src="../assets/logo-full.svg" alt="metafetch's logo">
+                <h1>
+                    Join the world of  seamless metadata fetching process...
+                </h1>
             </div>
         </section>
     </main>
