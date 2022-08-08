@@ -1,0 +1,8 @@
+@import "base.css";
+
+
+
+/* logo for large screens */
+#lp-lg-logo {
+    display: none;
+}
