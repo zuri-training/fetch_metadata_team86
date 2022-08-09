@@ -109,7 +109,7 @@ def register(request):
                 "user_id": user.pk,
                 'token': token.key,
                 'username': user.username,
-                'firt_name': user.first_name,
+                'first_name': user.first_name,
                 'last_name': user.last_name,
                 'email': user.email,
                 'last_login': user.last_login,

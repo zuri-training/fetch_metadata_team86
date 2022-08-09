@@ -27,5 +27,5 @@ def image_meta_extract(file_path, file_type=None):
             return dict_f
     except Exception as e:
         
-        return {'message': "An error occured."}
+        return {}
         

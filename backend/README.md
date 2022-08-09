@@ -388,9 +388,15 @@ fetch("http://127.0.0.1:8000/api/auth/password_reset/confirm/", requestOptions)
 # Extract Meta Data API Endpoints
 
 - /api/extract_metadata/image_meta_extract/
+> The above end-point can be used to extract metadate from images of type 'jpeg', 'jpg', 'png', tiff only
 - /api/extract_metadata/jpg_meta_extract/
+> (bug) The above end-point can be used for only 'jpg' images only, it gives more details than the general `/image_meta_extract/` end-point.
+- /api/extract_metadata/flat_file_metadata/
+> The above end-point can be used to extract file metadata. Files of type 'doc', 'pdf', 'pptx', 'xlsx' only
 - /api/extract_metadata/get_files/
+> The above end-point can be used to get all the file and metadata a user has processed or saved.
 - /api/extract_metadata/delete_file/{file_id}/
+> The above end-point can be used to delete a particular history or file with it metadata.
 
 
 ## Details

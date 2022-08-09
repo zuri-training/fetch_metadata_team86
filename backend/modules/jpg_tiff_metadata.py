@@ -34,5 +34,5 @@ def jpg_meta_ext(file_path, file_type=None):
                 return dict_i
     except Exception as e:
         print(e)
-        return {'message': f"{e}."}
+        return {}
         

@@ -46,6 +46,7 @@ class RegisterUserSerializer(serializers.ModelSerializer):
         # get the password and confirm_password from the data
         password = data.get('password')
         confirm_password = data.get('confirm_password')
+        username = data.get('username')
 
          
         errors = dict() 
@@ -57,6 +58,10 @@ class RegisterUserSerializer(serializers.ModelSerializer):
             if password != confirm_password:
                 raise serializers.ValidationError({
                     'password': 'Password does not match'
+                })
+            if CustomUser.objects.filter(username= username).exists():
+                raise serializers.ValidationError({
+                    'username': 'User with this username already exist.'
                 })
 
         # the exception raised here is different than serializers.ValidationError
@@ -70,16 +75,25 @@ class RegisterUserSerializer(serializers.ModelSerializer):
         # return super().validate(attrs)
 
     def save(self):
-        user = CustomUser.objects.create_user(
-            username=self.validated_data['username'],
-            email = self.validated_data['email']
-            # password=check if they match before seting the password
-        )
-        user.set_password(self.validated_data['password'])
+        username=self.validated_data['username']
+       
+        try:
+            user = CustomUser.objects.create_user(
+                username = self.validated_data['username'],
+                email = self.validated_data['email']
+                # password=check if they match before seting the password
+            )
+            user.set_password(self.validated_data['password'])
 
-        user.save()
+            user.save()
 
-        return user
+            return user
+        except Exception as e:
+            raise serializers.ValidationError({
+                "message": f'{e}'
+            })
+
+        
 
     class Meta:
         model = CustomUser
