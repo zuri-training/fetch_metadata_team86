@@ -3,8 +3,9 @@ A web application that allows users to upload files and extract the metadata of 
 
 # Design: fetch_metadata_team86
 - Research plan: https://docs.google.com/document/d/1ho9-msxN7DgEBDQaKtVoe83j9PgcdF4VyfP0Buu9dk0/edit?usp=sharing
-- Figjam board: https://www.figma.com/file/jvYzp8TWeraVXAa427ljqY/Research_%26_Brainstorming_Dashboard?node-id=0%3A1
-- Figma file: https://www.figma.com/file/uW8bBeZpcuwcMSI30B4yxf/Team86_FetchMetadata?node-id=17%3A2
+- Figma file: https://www.figma.com/file/EzjbbhuIO996B5JoImNolD
+
+All the design elements can be found in the various pages of the figma file above.
 
 # Back-End: fetch_metadata_team86
 
