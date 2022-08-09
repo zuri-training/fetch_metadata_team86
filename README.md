@@ -3,8 +3,9 @@ A web application that allows users to upload files and extract the metadata of 
 
 # Design: fetch_metadata_team86
 - Research plan: https://docs.google.com/document/d/1ho9-msxN7DgEBDQaKtVoe83j9PgcdF4VyfP0Buu9dk0/edit?usp=sharing
-- Figjam board: https://www.figma.com/file/jvYzp8TWeraVXAa427ljqY/Research_%26_Brainstorming_Dashboard?node-id=0%3A1
-- Figma file: https://www.figma.com/file/uW8bBeZpcuwcMSI30B4yxf/Team86_FetchMetadata?node-id=17%3A2
+- Figma file: https://www.figma.com/file/EzjbbhuIO996B5JoImNolD
+
+All the design elements can be found in the various pages of the figma file above.
 
 # Back-End: fetch_metadata_team86
 
@@ -244,7 +245,6 @@ fetch("http://127.0.0.1:8000/api/auth/logout/", requestOptions)
 ```
 
 
-
 ### Change Password User
 
 This gives an authenticated user the oppotunity to change password.
@@ -346,10 +346,69 @@ fetch("http://127.0.0.1:8000/api/auth/update_profile/?email=&first_name=taiwo&la
   .catch(error => console.log('error', error));
 ```
 
+## Forgot Password
+This operation requires 2 API endpoints, one to send a safe token to email, and the second to change password based on the token sent to email.
+This gives an authenticated user the oppotunity to change password.
 
-### Forgot Password
+- **End Point:** api/auth/password_reset/
 
-The [Django documentation](https://docs.djangoproject.com/en/dev/ref/contrib/csrf/#ajax) provides more information on retrieving the CSRF token using jQuery and sending it in requests. The CSRF token is saved as a cookie called csrftoken that you can retrieve from a HTTP response, which varies depending on the language that is being used.
+- **Methods:** POST
+
+- Sample Responce of `200` - Success
+
+```json
+{
+    "status": "OK"
+}
+```
+
+
+- Sample Responce of stattus `401` - Unautorized
+```json
+{
+    "detail": "Authentication credentials were not provided."
+}
+```
+- Sample Responce of stattus `400` - Bad Request
+
+```json
+{
+    "email": [
+        "This field is required."
+    ]
+}
+```
+- JavaScript Fetch Sample Code
+
+```javascript
+var formdata = new FormData();
+formdata.append("email", "pycodet1@gmail.com");
+
+var requestOptions = {
+  method: 'POST',
+  body: formdata,
+  redirect: 'follow'
+};
+
+fetch("http://127.0.0.1:8000/api/auth/password_reset/", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+```
+
+**Change Forgotten Password with Token sent**
+
+- **End Point:** api/auth/password_reset/confirm/
+
+- **Methods:** POST
+
+- Sample Responce of `200` - Success
+
+```json
+{
+    "status": "OK"
+}
+```
 
 - JavaScript Fetch Sample Code
 
@@ -384,7 +443,6 @@ fetch("http://127.0.0.1:8000/api/extract_metadata/jpg_meta_extract/", requestOpt
     "status": "OK"
 }
 ```
-
 
 - Sample Responce of stattus `401` - Unautorized
 ```json
@@ -434,6 +492,9 @@ fetch("http://127.0.0.1:8000/api/auth/password_reset/confirm/", requestOptions)
 > The above end-point can be used to get all the file and metadata a user has processed or saved.
 - /api/extract_metadata/delete_file/{file_id}/
 > The above end-point can be used to delete a particular history or file with it metadata.
+- /api/extract_metadata/jpg_meta_extract/
+- /api/extract_metadata/get_files/
+- /api/extract_metadata/delete_file/{file_id}/
 
 
 ## Details
