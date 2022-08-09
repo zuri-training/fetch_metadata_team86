@@ -275,6 +275,106 @@ main > section#landing-page-cont > article:nth-child(3) > section > figure > fig
             nav#landing-page-nav img#lp-lg-logo {
                 width: 100%;
             }
+            nav#landing-page-nav > div#nav-link {
+                width: 422px;
+                gap: 24px;
+                height: 71px;
+            }
+            nav#landing-page-nav > div#nav-link > a {
+                font-size: 24px;
+            }
+
+            header#landing-page-header {
+                padding-bottom: 128px;
+            }
+            header#landing-page-header > button.carousel-btn {
+                top: 140px;
+            }
+            header#landing-page-header > button.carousel-btn > img {
+                height: 50px;
+            }
+            header#landing-page-header > article {
+                width: 70%;
+                max-width: 810px;
+            }
+            header#landing-page-header > article > h1 {
+                font-weight: 700;
+                font-size: 52px;
+                margin-bottom: 24px;
+            }
+            header#landing-page-header > article > p {
+                font-size: 24px;
+                font-weight: 500;
+            }
+            header#landing-page-header > a#cta-btn {
+                margin-top: 80px;
+                width: 194px;
+                height: 71px;
+                font-size: 24px;
+            }
+
+            main > section#landing-page-cont {
+                padding: 0 6.2% 80px;
+            }
+            main > section#landing-page-cont > article:nth-child(1),
+            main > section#landing-page-cont > article:nth-child(3) {
+                width: 86%;
+                max-width: 1036px;
+            }
+            main > section#landing-page-cont > article > h2 {
+                font-size: 40px;
+                margin-top: 48px;
+            }
+            main > section#landing-page-cont > article p {
+                font-size: 24px;
+            }
+            main > section#landing-page-cont > article:nth-child(1) > h2,
+            main > section#landing-page-cont > article:nth-child(2) > h2 {
+                font-size: 40px;
+            }
+            main > section#landing-page-cont > article:nth-child(2) > h2 {
+                margin-top: 88px;
+                margin-bottom: 48px;
+            }
+            main > section#landing-page-cont > article:nth-child(2) > div {
+                gap: 56px 16px;
+            }
+            main > section#landing-page-cont > article:nth-child(2) > div > section {
+                width: 45%;
+                max-width: 600px;
+                height: 340px;
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: center;
+                padding-top: 28px;
+            }
+            main > section#landing-page-cont > article:nth-child(2) > div > section > h3 {
+                font-size: 32px;
+                
+            }
+            main > section#landing-page-cont > article:nth-child(2) > div > section > p {
+                max-width: 462px;
+            }
+            main > section#landing-page-cont > article:nth-child(3) {
+                max-width: 824px;
+            }
+            main > section#landing-page-cont > article:nth-child(3) > h2 {
+                margin-bottom: 40px;
+            }
+            main > section#landing-page-cont > article:nth-child(3) > section {
+                width: 92.2331%;
+                max-width: 760px;
+                margin-bottom: 28px;
+            }
+            main > section#landing-page-cont > article:nth-child(3) > section > figure {
+                gap: 25px;
+            }
+            main > section#landing-page-cont > article:nth-child(3) > section > figure > img {
+                width: 78px;
+            }
+            main > section#landing-page-cont > article:nth-child(3) > section > figure > figcaption {
+                font-size: 40px;
+            }
         }
     }
 }
