@@ -232,14 +232,15 @@ main > section#landing-page-cont > article:nth-child(3) > section > figure > fig
             margin-top: 60px;
         }
         
+        main > section#landing-page-cont {
+            padding: 0 6.2% 40px;
+        }
         main > section#landing-page-cont > article:nth-child(1),
         main > section#landing-page-cont > article:nth-child(3) {
             max-width: 580px;
         }
         main > section#landing-page-cont > article > h2 {
-            font-size: 16px;
-            font-weight: 700;
-            padding: 4px 0;
+            font-size: 22px;
             margin-top: 32px;
         }
         main > section#landing-page-cont > article p {
