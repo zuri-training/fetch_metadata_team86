@@ -4,6 +4,18 @@
 - Input: Design Team Lead
 
 ### Task Assigned
-- Error 404 page and Uploaded file page: https://github.com/zuri-training/fetch_metadata_team86/issues/52
-- Low fidelity design: https://github.com/zuri-training/fetch_metadata_team86/issues/27
+- Error 404 page and Uploaded file page w/ Kanma: https://github.com/zuri-training/fetch_metadata_team86/issues/52
+  - Error 404 page design
+  - Certified upload page design
+- Low fidelity design w/: https://github.com/zuri-training/fetch_metadata_team86/issues/27
+  - Landing page
+  - Sign-in and Sign-up page
+  - Convert file page
+  - Upload file page
+  - Saved file page
 - Web-view high fidelity design: https://github.com/zuri-training/fetch_metadata_team86/issues/26
+  - Landing page
+  - Sign-in and Sign-up page
+  - Convert file page
+  - Upload file page
+  - Saved file page
