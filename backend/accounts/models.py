@@ -18,6 +18,7 @@ from django.core.mail import send_mail
 
 
 class CustomUser(AbstractUser):
+    username = models.CharField(max_length=50, unique=True)
     email = models.EmailField(unique=True)
 
 

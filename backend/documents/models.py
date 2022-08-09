@@ -6,37 +6,18 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 import datetime
 import pytz
+
+from cloudinary_storage.storage import RawMediaCloudinaryStorage
 # Create your models here.
 
 
 class Files(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    file = models.FileField(upload_to="document_to_extract", max_length=100)
+    file = models.FileField(upload_to="document_to_extract", max_length=100, storage=RawMediaCloudinaryStorage())
     metadata_txt = models.TextField()
     extracted = models.DateTimeField(auto_now=False, auto_now_add=True)
     
 
-    # author = models.CharField(max_length=50)
-    # image_width = models.CharField(max_length=50)
-    # image_height = models.CharField(max_length=50)
-    # image_orientation = models.CharField(max_length=100)
-    # pixel = models.CharField(max_length=100)
-    # pixel_format = models.CharField(max_length=100)
-    # creation_date = models.CharField(max_length=100)
-    # camera_aperture = models.CharField(max_length=100)
-    # camera_exposure = models.CharField(max_length=100)
-    # camera_model = models.CharField(max_length=100)
-    # camera_manufacturer = models.CharField(max_length=100)
-    # compression = models.CharField(max_length=100)
-    # thumbnail_size = models.CharField(max_length=100)
-    # iso_speed_rating = models.CharField(max_length=100)
-    # exif_version = models.CharField(max_length=100)
-    # date = models.CharField(max_length=100)
-    # compressed_bits_per_pixel = models.CharField(max_length=100)
-    # Producer = models.CharField(max_length=100)
-    # Comment = models.CharField(max_length=100)
-    # mime_type = models.CharField(max_length=100)
-    # endianness = models.CharField(max_length=100)
 
     def __str__(self):
         return f'{self.user.email} extracted this on {self.extracted}'

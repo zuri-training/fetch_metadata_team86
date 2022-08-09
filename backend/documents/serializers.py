@@ -11,10 +11,16 @@ class DocumentSerializer(serializers.ModelSerializer):
     '''
     This Class Serializer helps validate if file is a safe file
     '''
-    def perform_create(self, serializer):
-        serializer.save(user= self.request.user)
-
     class Meta:
         model = Files
         fields = ('file',)
+
+class OfficeDocumentSerializer(serializers.ModelSerializer):
+    '''
+    This Class Serializer helps validate if file is a safe file
+    '''
+    file_type = serializers.CharField(required= True)
+    class Meta:
+        model = Files
+        fields = ('file', 'file_type')
 

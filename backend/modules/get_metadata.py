@@ -10,6 +10,9 @@ from pptx import Presentation
 # package to import xlsx files
 from openpyxl import load_workbook
 
+import pikepdf
+import sys
+
 # function to convert datetime to the date in string
 def parse_datetime(time):
     if type(time).__name__ == 'NoneType':
@@ -83,3 +86,11 @@ def get_pptx_metadata(file):
     pptx_metadata["version"] = prs.core_properties.version
     pptx_metadata["file_extension"] = "pptx"
     return pptx_metadata
+
+def get_pdf_metadata(file):
+    pdf = pikepdf.Pdf.open(file)
+    docinfo = pdf.docinfo
+    dict_t = {}
+    for key, value in docinfo.items():
+        dict_t[f'{key}'] = value
+    return dict_t
