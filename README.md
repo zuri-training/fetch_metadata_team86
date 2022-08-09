@@ -141,7 +141,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch(`http://127.0.0.1:8000/api/auth/register/?username=${username}&email=${email}&password=${password}&confirm_password=${confirm_password}`, requestOptions)
+fetch(`https://metafetch86.herokuapp.com/api/auth/register/?username=${username}&email=${email}&password=${password}&confirm_password=${confirm_password}`, requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
