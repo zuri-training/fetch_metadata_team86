@@ -11,7 +11,7 @@ const convertingModal=  document.querySelector(".converting")
 
 
 // const hamburger = document.createElement("img")
-// hamburger.src='../images/hamburger.svg';
+// hamburger.src='images/hamburger.svg';
 // hamburger.alt="Menu Icon"
 // hamburger.class="menu-icon"
 
@@ -48,11 +48,11 @@ mobile.addEventListener("change", ()=>{
 })
 
 function mobileView(){
-    headLogo.src='../Images/Brand icon mini.svg';
+    headLogo.src='Images/Brand icon mini.svg';
     // Head Opt
     headOpt.innerHTML=`
 <a type="button" data-bs-toggle="offcanvas" href="#nav-options" aria-controls="navoptions">
-<img src="../Images/hamburger.svg" alt="Menu Icon" class="menu-icon"/>
+<img src="Images/hamburger.svg" alt="Menu Icon" class="menu-icon"/>
 </a>
 
 
@@ -82,7 +82,7 @@ convBtn.textContent ="Convert File"
 
 
 function desktopView(){
-    headLogo.src='../Images/Metafetch Icon.svg';
+    headLogo.src='Images/Metafetch Icon.svg';
     headOpt.innerHTML= `
     <span>
     <a href="#">Convert File</a>
