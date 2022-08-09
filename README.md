@@ -238,7 +238,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://127.0.0.1:8000/api/auth/logout/", requestOptions)
+fetch("https://metafetch86.herokuapp.com/api/auth/logout/", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
@@ -292,7 +292,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch(`http://127.0.0.1:8000/api/auth/change-password/?old_password=${OLD_PASSWORD}&new_password=${NEW_PASSWORD}`, requestOptions)
+fetch(`https://metafetch86.herokuapp.com/api/auth/change-password/?old_password=${OLD_PASSWORD}&new_password=${NEW_PASSWORD}`, requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
@@ -340,7 +340,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://127.0.0.1:8000/api/auth/update_profile/?email=&first_name=taiwo&last_name=", requestOptions)
+fetch("https://metafetch86.herokuapp.com/api/auth/update_profile/?email=&first_name=taiwo&last_name=", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
@@ -390,7 +390,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://127.0.0.1:8000/api/auth/password_reset/", requestOptions)
+fetch("https://metafetch86.herokuapp.com/api/auth/password_reset/", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
@@ -426,7 +426,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://127.0.0.1:8000/api/extract_metadata/jpg_meta_extract/", requestOptions)
+fetch("https://metafetch86.herokuapp.com/api/extract_metadata/jpg_meta_extract/", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
 ```
@@ -473,7 +473,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://127.0.0.1:8000/api/auth/password_reset/confirm/", requestOptions)
+fetch("https://metafetch86.herokuapp.com/api/auth/password_reset/confirm/", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
@@ -519,7 +519,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://127.0.0.1:8000/api/extract_metadata/jpg_meta_extract/", requestOptions)
+fetch("https://metafetch86.herokuapp.com/api/extract_metadata/jpg_meta_extract/", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
 ```
@@ -538,7 +538,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://127.0.0.1:8000/api/extract_metadata/get_files/", requestOptions)
+fetch("https://metafetch86.herokuapp.com/api/extract_metadata/get_files/", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
@@ -561,7 +561,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://127.0.0.1:8000/api/extract_metadata/delete_file/8/", requestOptions)
+fetch("https://metafetch86.herokuapp.com/api/extract_metadata/delete_file/8/", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
