@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | METAFETCH</title>
+    <link rel="icon" type="image/svg" href="assets/logo.svg">
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
@@ -13,15 +14,19 @@
             <img id="lp-lg-logo" src="assets/logo-full.svg" alt="Metafetch's logo">
             <img id="lp-sm-logo" src="assets/logo.svg" alt="Metafetch's logo">
         </a>
-        <button>Login</button>
-        <button>Register</button>
+        <div id="nav-link">
+            <a href="./pages/login.html">Login</a>
+            <a href="./pages/signup.html" class="active-form">Register</a>
+        </div>
     </nav>
-    <header>
-        <button class="carousel-left">
-            <img src="assets/icons/carousel-arrow.svg" alt="carousel previous button">
+    <header id="landing-page-header">
+        <button class="carousel-btn carousel-left">
+            <img class="c-sm" src="assets/icons/chevron-left-bold.svg" alt="carousel previous button">
+            <img class="c-lg" src="assets/icons/chevron-left-thin.svg" alt="carousel previous button">
         </button>
-        <button class="carousel-right">
-            <img src="assets/icons/carousel-arrow.svg" alt="carousel next button">
+        <button class="carousel-btn carousel-right">
+            <img class="c-sm" src="assets/icons/chevron-right-bold.svg" alt="carousel next button">
+            <img class="c-lg" src="assets/icons/chevron-right-thin.svg" alt="carousel previous button">
         </button>
         <article id="slide-1">
             <h1>
@@ -41,10 +46,10 @@
                 format to either PDF, DOC, or JPEG format with ease.
             </p>
         </article>
-        <button>Get Started</button>
+        <a href="./pages/signup.html" id="cta-btn">Get Started</a>
     </header>
     <main>
-        <section>
+        <section id="landing-page-cont">
             <article>
                 <h2>What is Metadata</h2>
                 <p>
@@ -57,34 +62,36 @@
             </article>
             <article>
                 <h2>Why is it important</h2>
-                <section>
-                    <h3>Classification</h3>
-                    <p>
-                        Metadata can be used to track things like the dates 
-                        associated with a document's associated record schedule.
-                    </p>
-                </section>
-                <section>
-                    <h3>Information Security</h3>
-                    <p>
-                        Metadata can be used to flag a security setting, validating 
-                        access and edit rights, and thus controlling distribution
-                    </p>
-                </section>
-                <section>
-                    <h3>Customer Experience</h3>
-                    <p>
-                        Metadata can also be used as a way to capture users' rating of content, for 
-                        example, indicating that content is "valuable” or "useless" or even "dated."
-                    </p>
-                </section>
-                <section>
-                    <h3>Information "Findability"</h3>
-                    <p>
-                        Metadata is extremely valuable as a search and retrieval enhancing mechanism by enabling 
-                        users to target a query on a certain field, such as author, subject, date, etc.
-                    </p>
-                </section>
+                <div>
+                    <section>
+                        <h3>Classification</h3>
+                        <p>
+                            Metadata can be used to track things like the dates
+                            associated with a document's associated record schedule.
+                        </p>
+                    </section>
+                    <section>
+                        <h3>Information Security</h3>
+                        <p>
+                            Metadata can be used to flag a security setting, validating
+                            access and edit rights, and thus controlling distribution
+                        </p>
+                    </section>
+                    <section>
+                        <h3>Customer Experience</h3>
+                        <p>
+                            Metadata can also be used as a way to capture users' rating of content, for
+                            example, indicating that content is "valuable” or "useless" or even "dated."
+                        </p>
+                    </section>
+                    <section>
+                        <h3>Information "Findability"</h3>
+                        <p>
+                            Metadata is extremely valuable as a search and retrieval enhancing mechanism by enabling
+                            users to target a query on a certain field, such as author, subject, date, etc.
+                        </p>
+                    </section>
+                </div>
             </article>
             <article>
                 <h2>How to use MetaFetch</h2>
@@ -111,5 +118,10 @@
             </article>
         </section>
     </main>
+    <footer>
+        <span>&copy;2022 METAFETCH LTD.</span>
+        <a href="#">TERMS & CONDITIONS</a>
+        <a href="#">PRIVACY POLICY</a>
+    </footer>
 </body>
 </html>
