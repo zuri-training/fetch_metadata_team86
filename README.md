@@ -3,8 +3,9 @@ A web application that allows users to upload files and extract the metadata of 
 
 # Design: fetch_metadata_team86
 - Research plan: https://docs.google.com/document/d/1ho9-msxN7DgEBDQaKtVoe83j9PgcdF4VyfP0Buu9dk0/edit?usp=sharing
-- Figjam board: https://www.figma.com/file/jvYzp8TWeraVXAa427ljqY/Research_%26_Brainstorming_Dashboard?node-id=0%3A1
-- Figma file: https://www.figma.com/file/uW8bBeZpcuwcMSI30B4yxf/Team86_FetchMetadata?node-id=17%3A2
+- Figma file: https://www.figma.com/file/EzjbbhuIO996B5JoImNolD
+
+All the design elements can be found in the various pages of the figma file above.
 
 # Back-End: fetch_metadata_team86
 
@@ -64,7 +65,7 @@ pip install -r requirements.txt
 This API end-point would be used to register new users in the metafetch application and login in the user
 immidiatly after registration.
 
-- **End Point:** /api/auth/register/?email=**NAME@GMAIL.COM**&password=**PASSWORD**&confirm_password=**CONFIRM_PASSWORD**
+- **End Point:** /api/auth/register/?username=**pycodUSERNAMEet**&email=**NAME@GMAIL.COM**&password=**PASSWORD**&confirm_password=**CONFIRM_PASSWORD**
 
 - **Methods:** POST
 
@@ -78,7 +79,7 @@ immidiatly after registration.
             "user_id": 2,
             "token": "d08e094b22bbb0345b1b79b5423f1bb7fbbb59ab",
             "username": "",
-            "firt_name": "",
+            "first_name": "",
             "last_name": "",
             "email": "myname@gmail.com",
             "last_login": "2022-08-02T22:45:24.933115Z"
@@ -90,6 +91,69 @@ immidiatly after registration.
 > - `username`
 > - `firt_name`
 > - `last_name`
+
+- Sample Responce of stattus `400` - Bad Request
+```json
+{
+    "username": [
+        "User with this username already exist."
+    ]
+}
+// for invalid email
+
+{
+    "email": [
+        "Enter a valid email address."
+    ]
+}
+
+// password validation
+
+{
+    "password": [
+        "Password does not match"
+    ]
+}
+
+// if a required files is not passed
+
+{
+    "confirm_password": [
+        "This field is required."
+    ]
+}
+```
+
+
+
+- **JavaScript Code using Fetch**
+
+```javascript
+
+username = document.getElementById("username")
+email = document.getElementById("email")
+password = document.getElementById("password")
+confirm_password = document.getElementById("confirm_password")
+
+
+var requestOptions = {
+  method: 'POST',
+  redirect: 'follow'
+};
+
+fetch(`https://metafetch86.herokuapp.com/api/auth/register/?username=${username}&email=${email}&password=${password}&confirm_password=${confirm_password}`, requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+```
+
+```json
+{
+    "username": [
+        "User with this username already exist."
+    ]
+}
+```
 
 ### Login User
 
@@ -114,7 +178,7 @@ it is designed on the official MetaFetch UI.
             "user_id": 2,
             "token": "d08e094b22bbb0345b1b79b5423f1bb7fbbb59ab",
             "username": "",
-            "firt_name": "",
+            "first_name": "",
             "last_name": "",
             "email": "myname@gmail.com",
             "last_login": "2022-08-02T22:45:24.933115Z"
@@ -174,7 +238,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://127.0.0.1:8000/api/auth/logout/", requestOptions)
+fetch("https://metafetch86.herokuapp.com/api/auth/logout/", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
@@ -228,7 +292,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch(`http://127.0.0.1:8000/api/auth/change-password/?old_password=${OLD_PASSWORD}&new_password=${NEW_PASSWORD}`, requestOptions)
+fetch(`https://metafetch86.herokuapp.com/api/auth/change-password/?old_password=${OLD_PASSWORD}&new_password=${NEW_PASSWORD}`, requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
@@ -276,7 +340,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://127.0.0.1:8000/api/auth/update_profile/?email=&first_name=taiwo&last_name=", requestOptions)
+fetch("https://metafetch86.herokuapp.com/api/auth/update_profile/?email=&first_name=taiwo&last_name=", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
@@ -326,7 +390,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://127.0.0.1:8000/api/auth/password_reset/", requestOptions)
+fetch("https://metafetch86.herokuapp.com/api/auth/password_reset/", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
@@ -346,6 +410,39 @@ fetch("http://127.0.0.1:8000/api/auth/password_reset/", requestOptions)
 }
 ```
 
+- JavaScript Fetch Sample Code
+
+```javascript
+var myHeaders = new Headers();
+myHeaders.append("Authorization", "token 23c1ad67a9798aea9a6e5ed0f9a61a5cfb450689");
+
+var formdata = new FormData();
+formdata.append("file", fileInput.files[0], "/C:/Users/Adegite/Zuri training/Project Phase/fetch_metadata_team86-1/backend/modules/test_files/DSC_0911.JPG");
+
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  body: formdata,
+  redirect: 'follow'
+};
+
+fetch("https://metafetch86.herokuapp.com/api/extract_metadata/jpg_meta_extract/", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+```
+**Change Forgotten Password with Token sent**
+
+- **End Point:** api/auth/password_reset/confirm/
+
+- **Methods:** POST
+
+- Sample Responce of `200` - Success
+
+```json
+{
+    "status": "OK"
+}
+```
 
 - Sample Responce of stattus `401` - Unautorized
 ```json
@@ -376,7 +473,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://127.0.0.1:8000/api/auth/password_reset/confirm/", requestOptions)
+fetch("https://metafetch86.herokuapp.com/api/auth/password_reset/confirm/", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
@@ -386,6 +483,15 @@ fetch("http://127.0.0.1:8000/api/auth/password_reset/confirm/", requestOptions)
 # Extract Meta Data API Endpoints
 
 - /api/extract_metadata/image_meta_extract/
+> The above end-point can be used to extract metadate from images of type 'jpeg', 'jpg', 'png', tiff only
+- /api/extract_metadata/jpg_meta_extract/
+> (bug) The above end-point can be used for only 'jpg' images only, it gives more details than the general `/image_meta_extract/` end-point.
+- /api/extract_metadata/flat_file_metadata/
+> The above end-point can be used to extract file metadata. Files of type 'doc', 'pdf', 'pptx', 'xlsx' only
+- /api/extract_metadata/get_files/
+> The above end-point can be used to get all the file and metadata a user has processed or saved.
+- /api/extract_metadata/delete_file/{file_id}/
+> The above end-point can be used to delete a particular history or file with it metadata.
 - /api/extract_metadata/jpg_meta_extract/
 - /api/extract_metadata/get_files/
 - /api/extract_metadata/delete_file/{file_id}/
@@ -413,7 +519,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://127.0.0.1:8000/api/extract_metadata/jpg_meta_extract/", requestOptions)
+fetch("https://metafetch86.herokuapp.com/api/extract_metadata/jpg_meta_extract/", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
 ```
@@ -432,7 +538,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://127.0.0.1:8000/api/extract_metadata/get_files/", requestOptions)
+fetch("https://metafetch86.herokuapp.com/api/extract_metadata/get_files/", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
@@ -455,7 +561,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://127.0.0.1:8000/api/extract_metadata/delete_file/8/", requestOptions)
+fetch("https://metafetch86.herokuapp.com/api/extract_metadata/delete_file/8/", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
