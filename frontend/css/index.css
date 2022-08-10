@@ -30,10 +30,19 @@ nav#landing-page-nav > div#nav-link > a {
     justify-content: center;
     align-items: center;
     color: var(--primary-dark);
+    transition: .5s ease-in-out;
 }
 nav#landing-page-nav > div#nav-link > a.active-form {
     background: var(--primary-dark);
     color: #F9FCFC;
+}
+nav#landing-page-nav > div#nav-link > a:hover {
+    cursor: pointer;
+    background: rgb(214, 214, 214);
+}
+nav#landing-page-nav > div#nav-link > a.active-form:hover {
+    background: var(--primary-dark);
+    opacity: .8;
 }
 
 header#landing-page-header {
@@ -63,24 +72,35 @@ header#landing-page-header > button.carousel-left {
 header#landing-page-header > button.carousel-right {
     right: 6.5%;
 }
-header#landing-page-header > article {
+header#landing-page-header > section {
     width: 70%;
     max-width: 241px;
+    height: 160px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+header#landing-page-header > section > article {
+    width: 100%;
+    height: 100%;
     text-align: center;
     color: var(--primary-dark);
+    position: absolute;
+    transition: all 0.5s;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
 }
-header#landing-page-header > article > h1 {
+header#landing-page-header > section > article > h1 {
     font-weight: 500;
     font-size: 24px;
     padding: 7.5px 0;
 }
-header#landing-page-header > article > p {
+header#landing-page-header > section > article > p {
     font-weight: 400;
     font-size: 12px;
     line-height: 1.7;
-}
-header#landing-page-header > article#slide-2 {
-    display: none;
 }
 header#landing-page-header > a#cta-btn {
     margin-top: 24px;
@@ -93,6 +113,10 @@ header#landing-page-header > a#cta-btn {
     font-size: 16px;
     background: var(--primary-dark);
     color: #F9FCFC;
+    transition: .5s ease-in-out;
+}
+header#landing-page-header > a#cta-btn:hover {
+    opacity: .8;
 }
 
 main > section#landing-page-cont {
@@ -216,16 +240,19 @@ main > section#landing-page-cont > article:nth-child(3) > section > figure > fig
         header#landing-page-header > button.carousel-right {
             right: 8%;
         }
-        header#landing-page-header > article {
+        header#landing-page-header > section {
             width: 100%;
             max-width: 485px;
+        }
+        header#landing-page-header > section > article {
+            width: 100%;
             color: var(--primary-dark);
         }
-        header#landing-page-header > article > h1 {
+        header#landing-page-header > section > article > h1 {
             font-size: 32px;
             margin-bottom: 8px;
         }
-        header#landing-page-header > article > p {
+        header#landing-page-header > section > article > p {
             font-size: 15px;
         }
         header#landing-page-header > a#cta-btn {
@@ -293,16 +320,27 @@ main > section#landing-page-cont > article:nth-child(3) > section > figure > fig
             header#landing-page-header > button.carousel-btn > img {
                 height: 50px;
             }
-            header#landing-page-header > article {
+            header#landing-page-header > section {
                 width: 70%;
                 max-width: 810px;
+                height: 240px;
             }
-            header#landing-page-header > article > h1 {
+            @media screen and (min-width: 1055px) {
+                header#landing-page-header > section {
+                    width: 70%;
+                    max-width: 810px;
+                    height: 200px;
+                }
+            }
+            header#landing-page-header > section > article {
+                width: 100%;
+            }
+            header#landing-page-header > section > article > h1 {
                 font-weight: 700;
                 font-size: 52px;
                 margin-bottom: 24px;
             }
-            header#landing-page-header > article > p {
+            header#landing-page-header > section > article > p {
                 font-size: 24px;
                 font-weight: 500;
             }
