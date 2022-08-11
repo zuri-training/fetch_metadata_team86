@@ -1,0 +1,42 @@
+footer {
+    background: var(--primary-dark);
+    padding: 16px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer > span,
+footer > a {
+    color: #F9FCFC;
+    font-weight: 500;
+    font-size: 8px;
+    text-transform: uppercase;
+}
+@media screen and (min-width: 480px) {
+    footer > span,
+    footer > a {
+        font-size: 10px;
+    }
+    @media screen and (min-width: 600px) {
+        footer {
+            gap: 50px;
+            justify-content: center;
+        }
+        footer > span,
+        footer > a {
+            font-size: 12px;
+        }
+        @media screen and (min-width: 768px) {
+            footer {
+                padding: 24px 50px;
+                gap: 80px;
+                justify-content: center;
+            }
+            footer > span,
+            footer > a {
+                font-weight: 400;
+                font-size: 16px;
+            }
+        }
+    }
+}

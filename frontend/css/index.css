@@ -1,0 +1,418 @@
+@import "base.css";
+@import "footer.css";
+
+
+nav#landing-page-nav {
+    padding: 40px 6.4%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+}
+nav#landing-page-nav img#lp-sm-logo {
+    display: block;
+}
+/* logo for large screens */
+nav#landing-page-nav img#lp-lg-logo {
+    display: none;
+}
+nav#landing-page-nav > div#nav-link {
+    width: 168px;
+    height: 38px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+nav#landing-page-nav > div#nav-link > a {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-dark);
+    transition: .5s ease-in-out;
+}
+nav#landing-page-nav > div#nav-link > a.active-form {
+    background: var(--primary-dark);
+    color: #F9FCFC;
+}
+nav#landing-page-nav > div#nav-link > a:hover {
+    cursor: pointer;
+    background: rgb(214, 214, 214);
+}
+nav#landing-page-nav > div#nav-link > a.active-form:hover {
+    background: var(--primary-dark);
+    opacity: .8;
+}
+
+header#landing-page-header {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding-bottom: 40px;
+}
+header#landing-page-header > button.carousel-btn {
+    position: absolute;
+    top: 105px;
+}
+header#landing-page-header > button.carousel-btn > img.c-sm {
+    display: block;
+}
+header#landing-page-header > button.carousel-btn > img.c-lg {
+    display: none;
+}
+header#landing-page-header > button.carousel-btn > img {
+    width: auto;
+    height: 15.84px;
+}
+header#landing-page-header > button.carousel-left {
+    left: 6.5%;
+}
+header#landing-page-header > button.carousel-right {
+    right: 6.5%;
+}
+header#landing-page-header > section {
+    width: 70%;
+    max-width: 241px;
+    height: 160px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+header#landing-page-header > section > article {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: var(--primary-dark);
+    position: absolute;
+    transition: all 0.5s;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+header#landing-page-header > section > article > h1 {
+    font-weight: 500;
+    font-size: 24px;
+    padding: 7.5px 0;
+}
+header#landing-page-header > section > article > p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.7;
+}
+header#landing-page-header > a#cta-btn {
+    margin-top: 24px;
+    width: 155px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 16px;
+    background: var(--primary-dark);
+    color: #F9FCFC;
+    transition: .5s ease-in-out;
+}
+header#landing-page-header > a#cta-btn:hover {
+    opacity: .8;
+}
+
+main > section#landing-page-cont {
+    padding: 0 6.2% 24px;
+    color: var(--primary-dark);
+}
+main > section#landing-page-cont > article {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+main > section#landing-page-cont > article:nth-child(1),
+main > section#landing-page-cont > article:nth-child(3) {
+    max-width: 327px;
+}
+main > section#landing-page-cont > article > h2 {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 4px 0;
+    margin-top: 24px;
+    margin-bottom: 16px;
+}
+main > section#landing-page-cont > article p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.6;
+}
+main > section#landing-page-cont > article:nth-child(1) > h2,
+main > section#landing-page-cont > article:nth-child(2) > h2 {
+    font-size: 24px;
+    font-weight: 500;
+}
+main > section#landing-page-cont > article:nth-child(1) > h2 {
+    margin-top: 0px;
+}
+main > section#landing-page-cont > article:nth-child(2) > div {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+}
+main > section#landing-page-cont > article:nth-child(2) > div > section {
+    border: 1px solid var(--primary-dark);
+    padding: 24px;
+}
+main > section#landing-page-cont > article:nth-child(2) > div > section > h3 {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+main > section#landing-page-cont > article:nth-child(2) > div > section > p {
+    max-width: 241px;
+}
+main > section#landing-page-cont > article:nth-child(3) {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+main > section#landing-page-cont > article:nth-child(3) > section {
+    width: 100%;
+    max-width: 265px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+main > section#landing-page-cont > article:nth-child(3) > section > figure {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 15px;
+}
+main > section#landing-page-cont > article:nth-child(3) > section > figure > img {
+    width: 27px;
+    height: auto;
+}
+main > section#landing-page-cont > article:nth-child(3) > section > figure > figcaption {
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+}
+
+@media screen and (min-width: 425px) {
+    main > section#landing-page-cont > article:nth-child(2) > div > section > p {
+        max-width: 245px;
+    }
+    @media screen and (min-width: 692px) {
+        nav#landing-page-nav {
+            padding: 6.667% 6.5% 7.362%;
+        }
+        nav#landing-page-nav img#lp-sm-logo {
+            display: none;
+        }
+        nav#landing-page-nav img#lp-lg-logo {
+            display: block;
+            width: 70%;
+            max-width: 270px;
+            height: auto;
+        }
+
+        header#landing-page-header {
+            padding-bottom: 96px;
+        }
+        header#landing-page-header > button.carousel-btn {
+            top: 90px;
+        }
+        header#landing-page-header > button.carousel-btn > img.c-sm {
+            display: none;
+        }
+        header#landing-page-header > button.carousel-btn > img.c-lg {
+            display: block;
+        }
+        header#landing-page-header > button.carousel-btn > img {
+            height: 30px;
+        }
+        header#landing-page-header > button.carousel-left {
+            left: 8%;
+        }
+        header#landing-page-header > button.carousel-right {
+            right: 8%;
+        }
+        header#landing-page-header > section {
+            width: 100%;
+            max-width: 485px;
+        }
+        header#landing-page-header > section > article {
+            width: 100%;
+            color: var(--primary-dark);
+        }
+        header#landing-page-header > section > article > h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+        header#landing-page-header > section > article > p {
+            font-size: 15px;
+        }
+        header#landing-page-header > a#cta-btn {
+            margin-top: 60px;
+        }
+        
+        main > section#landing-page-cont {
+            padding: 0 6.2% 40px;
+        }
+        main > section#landing-page-cont > article:nth-child(1),
+        main > section#landing-page-cont > article:nth-child(3) {
+            max-width: 580px;
+        }
+        main > section#landing-page-cont > article > h2 {
+            font-size: 22px;
+            margin-top: 32px;
+        }
+        main > section#landing-page-cont > article p {
+            font-size: 15px;
+        }
+        main > section#landing-page-cont > article:nth-child(1) > h2,
+        main > section#landing-page-cont > article:nth-child(2) > h2 {
+            font-size: 28px;
+        }
+        main > section#landing-page-cont > article:nth-child(2) > h2 {
+            margin-top: 64px;
+            margin-bottom: 28px;
+        }
+        main > section#landing-page-cont > article:nth-child(2) > div {
+            gap: 40px 16px;
+        }
+        main > section#landing-page-cont > article:nth-child(3) > section {
+            width: 100%;
+            max-width: 420px;
+            margin-bottom: 28px;
+        }
+        main > section#landing-page-cont > article:nth-child(3) > section > figure {
+            gap: 16px;
+        }
+        main > section#landing-page-cont > article:nth-child(3) > section > figure > img {
+            width: 50px;
+        }
+        main > section#landing-page-cont > article:nth-child(3) > section > figure > figcaption {
+            font-size: 21px;
+        }
+        @media screen and (min-width: 1024px) {
+            nav#landing-page-nav img#lp-lg-logo {
+                width: 100%;
+            }
+            nav#landing-page-nav > div#nav-link {
+                width: 422px;
+                gap: 24px;
+                height: 71px;
+            }
+            nav#landing-page-nav > div#nav-link > a {
+                font-size: 24px;
+            }
+
+            header#landing-page-header {
+                padding-bottom: 128px;
+            }
+            header#landing-page-header > button.carousel-btn {
+                top: 140px;
+            }
+            header#landing-page-header > button.carousel-btn > img {
+                height: 50px;
+            }
+            header#landing-page-header > section {
+                width: 70%;
+                max-width: 810px;
+                height: 240px;
+            }
+            @media screen and (min-width: 1055px) {
+                header#landing-page-header > section {
+                    width: 70%;
+                    max-width: 810px;
+                    height: 200px;
+                }
+            }
+            header#landing-page-header > section > article {
+                width: 100%;
+            }
+            header#landing-page-header > section > article > h1 {
+                font-weight: 700;
+                font-size: 52px;
+                margin-bottom: 24px;
+            }
+            header#landing-page-header > section > article > p {
+                font-size: 24px;
+                font-weight: 500;
+            }
+            header#landing-page-header > a#cta-btn {
+                margin-top: 80px;
+                width: 194px;
+                height: 71px;
+                font-size: 24px;
+            }
+
+            main > section#landing-page-cont {
+                padding: 0 6.2% 80px;
+            }
+            main > section#landing-page-cont > article:nth-child(1),
+            main > section#landing-page-cont > article:nth-child(3) {
+                width: 86%;
+                max-width: 1036px;
+            }
+            main > section#landing-page-cont > article > h2 {
+                font-size: 40px;
+                margin-top: 48px;
+            }
+            main > section#landing-page-cont > article p {
+                font-size: 24px;
+            }
+            main > section#landing-page-cont > article:nth-child(1) > h2,
+            main > section#landing-page-cont > article:nth-child(2) > h2 {
+                font-size: 40px;
+            }
+            main > section#landing-page-cont > article:nth-child(2) > h2 {
+                margin-top: 88px;
+                margin-bottom: 48px;
+            }
+            main > section#landing-page-cont > article:nth-child(2) > div {
+                gap: 56px 16px;
+            }
+            main > section#landing-page-cont > article:nth-child(2) > div > section {
+                width: 45%;
+                max-width: 600px;
+                height: 340px;
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: center;
+                padding-top: 28px;
+            }
+            main > section#landing-page-cont > article:nth-child(2) > div > section > h3 {
+                font-size: 32px;
+                
+            }
+            main > section#landing-page-cont > article:nth-child(2) > div > section > p {
+                max-width: 462px;
+            }
+            main > section#landing-page-cont > article:nth-child(3) {
+                max-width: 824px;
+            }
+            main > section#landing-page-cont > article:nth-child(3) > h2 {
+                margin-bottom: 40px;
+            }
+            main > section#landing-page-cont > article:nth-child(3) > section {
+                width: 92.2331%;
+                max-width: 760px;
+                margin-bottom: 28px;
+            }
+            main > section#landing-page-cont > article:nth-child(3) > section > figure {
+                gap: 25px;
+            }
+            main > section#landing-page-cont > article:nth-child(3) > section > figure > img {
+                width: 78px;
+            }
+            main > section#landing-page-cont > article:nth-child(3) > section > figure > figcaption {
+                font-size: 40px;
+            }
+        }
+    }
+}

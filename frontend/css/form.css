@@ -5,7 +5,7 @@ nav.form-nav {
     padding: 40px 6.4%;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background: transparent;
 }
