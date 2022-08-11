@@ -1,13 +1,37 @@
-const email = "test@test.com",
-password = "testertestingtests";
+console.log("login connnected");
 
-var requestOptions = {
-  method: 'POST',
-  mode: 'no-cors',
-  redirect: 'follow'
-};
+const
+email = document.querySelector("#email"),
+password = document.querySelector("#password");
 
-fetch(`https://metafetch86.herokuapp.com/api/auth/login/?username=${email}&password=${password}`, requestOptions)
-  .then(response => response.json())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
+// const loginData = {
+//   'username': userName.value,
+//   'email': email.value,
+//   'password': password.value,
+//   'confirm_password': confirmPassword.value,
+// }
+const loginData = {
+  'email': "stilltesterossres@mail.com",
+  'password': "cvfgdgfhgty565765857",
+}
+
+async function postData(formdata) {
+  const { email, password } = formdata;
+  var requestOptions = {
+    method: 'POST',
+    redirect: 'follow',
+    mode: 'no-cors'
+  };
+  const fetchUrl = "https://metafetch86.herokuapp.com/api/auth/login/";
+  let response = await fetch(`${fetchUrl}?username=${email}&password=${password}`, requestOptions);
+    let result = await response.text();
+    return result;
+}
+
+postData(loginData).then((result)=> {
+  console.log(result);
+  if(result.code === 200) {
+    localStorage.setItem("metafetchUserData", result.data);
+    window.location.replace("");
+  }
+});
