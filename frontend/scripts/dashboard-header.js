@@ -1,6 +1,7 @@
 const headerDDBtn = document.querySelector("#setting-dropdown"),
 mbHeaderDDBtn = document.querySelector("#profile-set"),
-headerDropdown = document.querySelector("#profile-settings-dd");
+headerDropdown = document.querySelector("#profile-settings-dd"),
+mbCloseBtn = document.querySelector("#close-sm-bar");
 
 const logoutBtn = document.querySelector("#logout-btn");
 

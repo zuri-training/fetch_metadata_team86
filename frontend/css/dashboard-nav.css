@@ -90,6 +90,44 @@ nav.dashboard-navbar > ul#profile-settings-dd > li > button:hover {
     background: var(--secondary-blue);
     color: var(--primary-white);
 }
+#mb-dash-nav-links {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.4);
+    z-index: 999;
+    height: 100vh;
+}
+#mb-dash-nav-links > div {
+    max-width: 400px;
+    border: 1px solid red;
+    height: 100%;
+    background: var(--primary-dark);
+    display: flex;
+    flex-flow: column nowrap;
+    padding-top: 40px;
+}
+#close-sm-bar {
+    width: 30px;
+    align-self: flex-end;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+#close-sm-bar > svg {
+    fill: var(--primary-white);
+}
+#mb-dash-nav-links > div > a {
+    width: 100%;
+    color: var(--primary-white);
+    font-size: 18px;
+    padding: 18px 30px;
+    transition: .3s ease-in-out;
+}
+#mb-dash-nav-links > div > a:hover {
+    background: var(--secondary-blue);
+    cursor: pointer;
+}
 @media screen and (min-width: 600px) {
     nav.dashboard-navbar {
         padding: 6.667% 10% 7.362%;
@@ -124,14 +162,14 @@ nav.dashboard-navbar > ul#profile-settings-dd > li > button:hover {
         nav.dashboard-navbar > div.nav-lg > a.logo > img {
             width: 100%;
         }
-        nav.dashboard-navbar > div.nav-lg > div#dash-nav-links {
+        nav.dashboard-navbar > div.nav-lg > div#lg-dash-nav-links {
             width: 34.5%;
             height: 71px;
             max-width: 396px;
             display: flex;
             gap: 8px;
         }
-        nav.dashboard-navbar > div.nav-lg >  div#dash-nav-links > a {
+        nav.dashboard-navbar > div.nav-lg >  div#lg-dash-nav-links > a {
             width: 50%;
             height: 100%;
             display: flex;
@@ -142,7 +180,7 @@ nav.dashboard-navbar > ul#profile-settings-dd > li > button:hover {
             font-weight: 500;
             font-size: 24px;
         }
-        nav.dashboard-navbar > div.nav-lg >  div#dash-nav-links > a:hover {
+        nav.dashboard-navbar > div.nav-lg >  div#lg-dash-nav-links > a:hover {
             cursor: pointer;
             background: var(--secondary-blue);
             color: var(--primary-white);
