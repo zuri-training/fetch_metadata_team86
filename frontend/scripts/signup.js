@@ -1,22 +1,24 @@
 console.log("sign up connnected");
 
-const userName = document.querySelector("#username"),
+const registerForm = document.querySelcetor("#registeration-form"),
+userName = document.querySelector("#username"),
 email = document.querySelector("#email"),
 password = document.querySelector("#password"),
-confirmPassword = document.querySelector("#cpassword");
+confirmPassword = document.querySelector("#cpassword"),
+submitBtn = document.querySelector("#submit-register-form");
 
-// const registerationData = {
-//   'username': userName.value,
-//   'email': email.value,
-//   'password': password.value,
-//   'confirm_password': confirmPassword.value,
-// }
 const registerationData = {
-  'username': "stilltesteresossres",
-  'email': "stilltesterossres@mail.com",
-  'password': "cvfgdgfhgty565765857",
-  'confirm_password': "cvfgdgfhgty565765857",
+  'username': userName.value,
+  'email': email.value,
+  'password': password.value,
+  'confirm_password': confirmPassword.value,
 }
+// const registerationData = {
+//   'username': "stilltesteresossres",
+//   'email': "stilltesterossres@mail.com",
+//   'password': "cvfgdgfhgty565765857",
+//   'confirm_password': "cvfgdgfhgty565765857",
+// }
 
 async function postData(formdata) {
   const { username, email, password, confirm_password } = formdata;
@@ -31,4 +33,6 @@ async function postData(formdata) {
     return result;
 }
 
-postData(registerationData).then(result=> console.log(result));
+registerForm.onsubmit = ()=> {
+  postData(registerationData).then(result=> console.log(result));
+}
