@@ -26,7 +26,9 @@ button {
     --primary-font: "DM Sans", 'sans-serif';
     /* colors */
     --primary-dark: #002C33;
+    --secondary-blue: #319197;
     --primary-bg: #F9FCFC;
+    --primary-white: #F9FCFC;
 }
 body {
     background: var(--primary-bg);
