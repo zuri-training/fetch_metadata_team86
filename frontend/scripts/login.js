@@ -17,11 +17,10 @@ async function postData(formdata) {
   var requestOptions = {
     method: 'POST',
     redirect: 'follow',
-    mode: 'no-cors'
   };
   const fetchUrl = "https://metafetch86.herokuapp.com/api/auth/login/";
   let response = await fetch(`${fetchUrl}?username=${email}&password=${password}`, requestOptions);
-    let result = await response.text();
+    let result = await response.json();
     return result;
 }
 
@@ -35,8 +34,12 @@ loginForm.onsubmit = (e)=> {
   .then((result)=> {
     console.log(result);
     if(result.code === 200) {
-      localStorage.setItem("metafetchUserData", result.data);
-      window.location.replace("");
+      console.log("success");
+      console.log(result.data, JSON.stringify(result.data));
+      localStorage.setItem("metafetchUserData", JSON.stringify(result.data));
+      let ld = localStorage.getItem("metafetchUserData");
+      console.log(JSON.parse(ld));
+      window.location.replace("http://127.0.0.1:5500/frontend/Convert_page/convert_file.html");
     } else {
       console.log(result.data);
     }
