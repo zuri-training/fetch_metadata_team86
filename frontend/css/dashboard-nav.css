@@ -37,6 +37,33 @@ nav.dashboard-navbar > div.nav-lg > div.user-action > div#profile-img {
     height: 40px;
     background: var(--primary-dark);
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-white);
+}
+nav.dashboard-navbar > ul.profile-settings {
+    position: absolute;
+    width: 100%;
+    max-width: 220px;
+    top: 110px;
+    right: 6.5%;
+    border: 1px solid red;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+}
+nav.dashboard-navbar > ul.profile-settings > li {
+    padding: 16px 24px;
+    transition: .3s ease-in-out;
+}
+nav.dashboard-navbar > ul.profile-settings > li > a {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: var(--primary-dark);
 }
 @media screen and (min-width: 600px) {
     nav.dashboard-navbar {
@@ -50,6 +77,11 @@ nav.dashboard-navbar > div.nav-lg > div.user-action > div#profile-img {
         width: 70%;
         max-width: 270px;
         height: auto;
+    }
+    nav.dashboard-navbar > ul.profile-settings {
+        right: 10%;
+        max-width: 250px;
+        top: 80%;
     }
     @media screen and (min-width: 1100px) {
         nav.dashboard-navbar {
@@ -96,30 +128,22 @@ nav.dashboard-navbar > div.nav-lg > div.user-action > div#profile-img {
             width: 30%;
             max-width: 312px;
             height: 72px;
-            padding: 0 24px;
+            padding: 0 33px 0 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             color: var(--primary-dark);
-            font-weight: 700;
         }
         nav.dashboard-navbar > div.nav-lg >  div.user-action > h2 {
             font-size: 24px;
+            font-weight: 700;
+        }
+        nav.dashboard-navbar > ul.profile-settings {
+            width: 25.7%;
+            max-width: 312px;
+            top: 65%;
+            right: 7.1%;
         }
     }
 }
 
-
-
-
-
-
-
-
-
-nav.dashboard-navbar > ul.profile-settings {
-    display: none;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-}
