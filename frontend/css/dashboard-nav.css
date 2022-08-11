@@ -101,7 +101,6 @@ nav.dashboard-navbar > ul#profile-settings-dd > li > button:hover {
 }
 #mb-dash-nav-links > div {
     max-width: 400px;
-    border: 1px solid red;
     height: 100%;
     background: var(--primary-dark);
     display: flex;
