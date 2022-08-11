@@ -4,7 +4,7 @@ nav.dashboard-navbar {
     position: relative;
     padding: 40px 6.4%;
     background: transparent;
-    border: 1px solid red;
+    margin-bottom: 500px;
 }
 nav.dashboard-navbar a:hover {
     cursor: pointer;
@@ -51,7 +51,7 @@ nav.dashboard-navbar > ul#profile-settings-dd {
     max-width: 220px;
     top: 110px;
     right: 6.5%;
-    border: 1px solid red;
+    border: 1px solid var(--primary-dark);
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-start;
@@ -60,7 +60,8 @@ nav.dashboard-navbar > ul#profile-settings-dd {
 nav.dashboard-navbar > ul#profile-settings-dd > li {
     width: 100%;
 }
-nav.dashboard-navbar > ul#profile-settings-dd > li > a {
+nav.dashboard-navbar > ul#profile-settings-dd > li > a,
+nav.dashboard-navbar > ul#profile-settings-dd > li > button {
     width: 100%;
     padding: 16px 24px;
     display: flex;
@@ -69,8 +70,23 @@ nav.dashboard-navbar > ul#profile-settings-dd > li > a {
     color: var(--primary-dark);
     transition: .3s ease-in-out;
     background: transparent;
+    font-family: var(--primary-font);
+    font-size: 16px;
 }
-nav.dashboard-navbar > ul#profile-settings-dd > li > a:hover {
+nav.dashboard-navbar > ul#profile-settings-dd > li a.e-p,
+nav.dashboard-navbar > ul#profile-settings-dd > li > button {
+    gap: 15px;
+}
+nav.dashboard-navbar > ul#profile-settings-dd > li > a > svg > path,
+nav.dashboard-navbar > ul#profile-settings-dd > li > button > svg > path {
+    transition: .3s ease-in-out;
+}
+nav.dashboard-navbar > ul#profile-settings-dd > li > a:hover > svg > path,
+nav.dashboard-navbar > ul#profile-settings-dd > li > button:hover > svg > path {
+    fill: var(--primary-white);
+}
+nav.dashboard-navbar > ul#profile-settings-dd > li > a:hover,
+nav.dashboard-navbar > ul#profile-settings-dd > li > button:hover {
     background: var(--secondary-blue);
     color: var(--primary-white);
 }
