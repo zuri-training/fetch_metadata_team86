@@ -1,18 +1,12 @@
 console.log("sign up connnected");
 
-const registerForm = document.querySelcetor("#registeration-form"),
+const registerForm = document.querySelector("#registeration-form"),
 userName = document.querySelector("#username"),
 email = document.querySelector("#email"),
 password = document.querySelector("#password"),
 confirmPassword = document.querySelector("#cpassword"),
 submitBtn = document.querySelector("#submit-register-form");
 
-const registerationData = {
-  'username': userName.value,
-  'email': email.value,
-  'password': password.value,
-  'confirm_password': confirmPassword.value,
-}
 // const registerationData = {
 //   'username': "stilltesteresossres",
 //   'email': "stilltesterossres@mail.com",
@@ -33,6 +27,21 @@ async function postData(formdata) {
     return result;
 }
 
-registerForm.onsubmit = ()=> {
-  postData(registerationData).then(result=> console.log(result));
+registerForm.onsubmit = (e)=> {
+  e.preventDefault();
+  const registerationData = {
+    'username': userName.value,
+    'email': email.value,
+    'password': password.value,
+    'confirm_password': confirmPassword.value,
+  }
+  postData(registerationData).then(result=> {
+    console.log(result);
+    if(result.code === 200) {
+      console.log("success");
+      //window.location.replace("");
+    } else {
+      console.log("error");
+    }
+  });
 }
