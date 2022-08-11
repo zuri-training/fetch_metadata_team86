@@ -7,3 +7,4 @@ Name: EMMANUEL OLUBIYI
 - connect signup and login page to the api https://github.com/zuri-training/fetch_metadata_team86/issues/56
 - arrange the frontend folder, move all the images, html, css and JS files to their respective folder https://github.com/zuri-training/fetch_metadata_team86/issues/67
 - Set up form valdation for the signup and login page's form https://github.com/zuri-training/fetch_metadata_team86/issues/70
+- Link all dashboard pages together and work on their responsiveness https://github.com/zuri-training/fetch_metadata_team86/issues/72
