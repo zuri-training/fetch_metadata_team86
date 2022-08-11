@@ -1,0 +1,119 @@
+@import "base.css";
+/* dashboard navbar's style */
+nav.dashboard-navbar {
+    position: relative;
+    padding: 40px 6.4%;
+    background: transparent;
+    border: 1px solid red;
+}
+nav.dashboard-navbar a:hover {
+    cursor: pointer;
+}
+nav.dashboard-navbar > div {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+}
+nav.dashboard-navbar > div.nav-sm {
+    display: flex;
+}
+nav.dashboard-navbar > div.nav-lg {
+    display: none;
+}
+nav.dashboard-navbar > div.nav-sm > a {
+    display: flex;
+    justify-content: center;
+}
+nav.dashboard-navbar > div.nav-sm > a > img:nth-child(1) {
+    display: block;
+}
+nav.dashboard-navbar > div.nav-sm > a > img:nth-child(2) {
+    display: none;
+}
+nav.dashboard-navbar > div.nav-sm > button#profile-set {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-dark);
+    border-radius: 50%;
+}
+@media screen and (min-width: 600px) {
+    nav.dashboard-navbar {
+        padding: 6.667% 10% 7.362%;
+    }
+    nav.dashboard-navbar > div.nav-sm > a > img:nth-child(1) {
+        display: none;
+    }
+    nav.dashboard-navbar > div.nav-sm > a > img:nth-child(2) {
+        display: block;
+        width: 70%;
+        max-width: 270px;
+        height: auto;
+    }
+    @media screen and (min-width: 1024px) {
+        nav.dashboard-navbar {
+            padding: 6.667% 7.1% 7.362%;
+        }
+        nav.dashboard-navbar > div.nav-sm {
+            display: none;
+        }
+        nav.dashboard-navbar > div.nav-lg {
+            display: flex;
+        }
+        nav.dashboard-navbar > div.nav-lg > a.logo {
+            max-width: 267px;
+        }
+        nav.dashboard-navbar > div.nav-lg > a.logo > img {
+            width: 100%;
+        }
+        nav.dashboard-navbar > div.nav-lg > div#dash-nav-links {
+            width: 34.5%;
+            height: 71px;
+            max-width: 396px;
+            display: flex;
+            gap: 8px;
+        }
+        nav.dashboard-navbar > div.nav-lg >  div#dash-nav-links > a {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--primary-dark);
+            transition: .3s ease-in-out;
+            font-weight: 500;
+            font-size: 24px;
+        }
+        nav.dashboard-navbar > div.nav-lg >  div#dash-nav-links > a:hover {
+            cursor: pointer;
+            background: var(--secondary-blue);
+            color: var(--primary-white);
+        }
+        .user-action {
+            border: 1px solid var(--primary-dark);
+            background: transparent;
+            width: 30%;
+            max-width: 312px;
+            height: 72px;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+nav.dashboard-navbar > ul.profile-settings {
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
