@@ -31,7 +31,8 @@ nav.dashboard-navbar > div.nav-sm > a > img:nth-child(1) {
 nav.dashboard-navbar > div.nav-sm > a > img:nth-child(2) {
     display: none;
 }
-nav.dashboard-navbar > div.nav-sm > button#profile-set {
+nav.dashboard-navbar > div.nav-sm > button#profile-set,
+nav.dashboard-navbar > div.nav-lg > div.user-action > div#profile-img {
     width: 40px;
     height: 40px;
     background: var(--primary-dark);
@@ -50,7 +51,7 @@ nav.dashboard-navbar > div.nav-sm > button#profile-set {
         max-width: 270px;
         height: auto;
     }
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 1100px) {
         nav.dashboard-navbar {
             padding: 6.667% 7.1% 7.362%;
         }
@@ -89,7 +90,7 @@ nav.dashboard-navbar > div.nav-sm > button#profile-set {
             background: var(--secondary-blue);
             color: var(--primary-white);
         }
-        .user-action {
+        nav.dashboard-navbar > div.nav-lg >  div.user-action {
             border: 1px solid var(--primary-dark);
             background: transparent;
             width: 30%;
@@ -99,6 +100,11 @@ nav.dashboard-navbar > div.nav-sm > button#profile-set {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+        nav.dashboard-navbar > div.nav-lg >  div.user-action > h2 {
+            font-size: 24px;
         }
     }
 }
