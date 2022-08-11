@@ -45,6 +45,7 @@ nav.dashboard-navbar > div.nav-lg > div.user-action > div#profile-img {
     color: var(--primary-white);
 }
 nav.dashboard-navbar > ul.profile-settings {
+    background: var(--primary-bg);
     position: absolute;
     width: 100%;
     max-width: 220px;
@@ -54,16 +55,24 @@ nav.dashboard-navbar > ul.profile-settings {
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-start;
+    z-index: 99;
 }
 nav.dashboard-navbar > ul.profile-settings > li {
-    padding: 16px 24px;
-    transition: .3s ease-in-out;
+    width: 100%;
 }
 nav.dashboard-navbar > ul.profile-settings > li > a {
+    width: 100%;
+    padding: 16px 24px;
     display: flex;
     gap: 10px;
     align-items: center;
     color: var(--primary-dark);
+    transition: .3s ease-in-out;
+    background: transparent;
+}
+nav.dashboard-navbar > ul.profile-settings > li > a:hover {
+    background: var(--secondary-blue);
+    color: var(--primary-white);
 }
 @media screen and (min-width: 600px) {
     nav.dashboard-navbar {
