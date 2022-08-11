@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+
+body{
+    color:  #002C33;
+}
+
+
+input, button{
+    font-size: 16px;
+    font-weight: 400;
+    color: #002C33;
+
+}
+
+input{
+    width: 600px;
+}
+
+h1{
+    text-align: center;
+    font-family: 'DM Sans';
+}
+ 
+img{
+    max-width:40%;
+
+}
+label{
+    display: block;
+    font-family: 'DM Sans';
+    font-size: 16px;
+
+}
+
+button{
+    background: #002C33;
+    color:black;
+    font-family: 'DM Sans';
+    padding: 16px 24px;
+
+}
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 0px 64px rgba(0, 0, 0, 0.15);
+    width: 824px;
+}
+
+
+
+.inner form{
+    width: 70%;
+    justify-content: center;
+}
+
+div.img, div.btn{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px; 
+}
+
+div.form{
+    justify-content: center;
+}
+
+div.savebtn{
+    display: flex;
+    justify-content: center;
+    
+}
+
+div.space{
+    width: 40px;
+}
+/*mobile view for extra small phones*/
+@media(max-width:600px){
+    input{
+        width: 100%;
+    }
+
+    button{
+        width:100%;
+        
+    }
+
+    label{
+        visibility: hidden;
+    }
+
+    div.savebtn{
+        padding-top: 50px;
+    }
+
+    
+
+    }
+/*view for extra large laptops/desktop*/
+@media(min-width:1200px){
+    #remove, #cpp{
+        margin-left: 60px;
+    }
+
+
+}
+
+/*view for large laptops/desktops*/
+@media(min-width: 992px){
+    #remove, #cpp{
+        margin-left: 60px;
+
+    }
+
+#cpp{
+    width: 247px;
+}
+#remove{
+    width: 141px;
+}
+
+
+}
+
+/*view for medium-sized devices*/
+@media(min-width: 768px){
+    input{
+        width: 100%;
+    }
+
+    button{
+        width:100%;
+        
+    }
+}
+
+/*view for small devices*/
+@media(min-width:600px){
+    input{
+        width: 100%;
+    }
+
+    button{
+        width:100%;
+        
+    }
+
+    label{
+        visibility: hidden;
+    }
+
+    div.savebtn{
+        padding-top: 50px;
+    }
+}
