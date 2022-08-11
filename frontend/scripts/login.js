@@ -1,6 +1,7 @@
 console.log("login connnected");
 
 const
+loginForm = document.querySelector("#login-form"),
 email = document.querySelector("#email"),
 password = document.querySelector("#password");
 
@@ -10,10 +11,6 @@ password = document.querySelector("#password");
 //   'password': password.value,
 //   'confirm_password': confirmPassword.value,
 // }
-const loginData = {
-  'email': "stilltesterossres@mail.com",
-  'password': "cvfgdgfhgty565765857",
-}
 
 async function postData(formdata) {
   const { email, password } = formdata;
@@ -28,10 +25,21 @@ async function postData(formdata) {
     return result;
 }
 
-postData(loginData).then((result)=> {
-  console.log(result);
-  if(result.code === 200) {
-    localStorage.setItem("metafetchUserData", result.data);
-    window.location.replace("");
+loginForm.onsubmit = (e)=> {
+  e.preventDefault();
+  const loginData = {
+    'email': email.value,
+    'password': password.value,
   }
-});
+  postData(loginData)
+  .then((result)=> {
+    console.log(result);
+    if(result.code === 200) {
+      localStorage.setItem("metafetchUserData", result.data);
+      window.location.replace("");
+    } else {
+      console.log(result.data);
+    }
+  })
+  .catch(error => console.log(error));
+}
