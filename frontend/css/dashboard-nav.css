@@ -44,7 +44,7 @@ nav.dashboard-navbar > div.nav-lg > div.user-action > div#profile-img {
     font-weight: 700;
     color: var(--primary-white);
 }
-nav.dashboard-navbar > ul.profile-settings {
+nav.dashboard-navbar > ul#profile-settings-dd {
     background: var(--primary-bg);
     position: absolute;
     width: 100%;
@@ -57,10 +57,10 @@ nav.dashboard-navbar > ul.profile-settings {
     align-items: flex-start;
     z-index: 99;
 }
-nav.dashboard-navbar > ul.profile-settings > li {
+nav.dashboard-navbar > ul#profile-settings-dd > li {
     width: 100%;
 }
-nav.dashboard-navbar > ul.profile-settings > li > a {
+nav.dashboard-navbar > ul#profile-settings-dd > li > a {
     width: 100%;
     padding: 16px 24px;
     display: flex;
@@ -70,7 +70,7 @@ nav.dashboard-navbar > ul.profile-settings > li > a {
     transition: .3s ease-in-out;
     background: transparent;
 }
-nav.dashboard-navbar > ul.profile-settings > li > a:hover {
+nav.dashboard-navbar > ul#profile-settings-dd > li > a:hover {
     background: var(--secondary-blue);
     color: var(--primary-white);
 }
@@ -87,7 +87,7 @@ nav.dashboard-navbar > ul.profile-settings > li > a:hover {
         max-width: 270px;
         height: auto;
     }
-    nav.dashboard-navbar > ul.profile-settings {
+    nav.dashboard-navbar > ul#profile-settings-dd {
         right: 10%;
         max-width: 250px;
         top: 80%;
@@ -147,7 +147,7 @@ nav.dashboard-navbar > ul.profile-settings > li > a:hover {
             font-size: 24px;
             font-weight: 700;
         }
-        nav.dashboard-navbar > ul.profile-settings {
+        nav.dashboard-navbar > ul#profile-settings-dd {
             width: 25.7%;
             max-width: 312px;
             top: 65%;
