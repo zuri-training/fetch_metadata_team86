@@ -30,9 +30,13 @@ document.onclick = (e)=> {
         closeHeaderDropdown();
     }
     if(menuBtn.contains(e.target)) {
+        window.scrollTo(0, 0);
+        document.body.style.height = "100vh";
+        document.body.style.overflow = "hidden";
         sideNavCont.style.display = "block";
     } else if(!sideNav.contains(e.target) || mbCloseBtn.contains(e.target)) {
         sideNavCont.style.display = "none";
+        document.body.style.overflowY = "auto";
     }
 }
 

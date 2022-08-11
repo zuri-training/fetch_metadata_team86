@@ -1,4 +1,3 @@
-@import "base.css";
 /* dashboard navbar's style */
 nav.dashboard-navbar {
     position: relative;
@@ -123,6 +122,10 @@ nav.dashboard-navbar > ul#profile-settings-dd > li > button:hover {
     padding: 18px 30px;
     transition: .3s ease-in-out;
 }
+#mb-dash-nav-links > div > a.active-page {
+    background: var(--primary-dark);
+    color: var(--primary-white);
+}
 #mb-dash-nav-links > div > a:hover {
     background: var(--secondary-blue);
     cursor: pointer;
@@ -178,6 +181,10 @@ nav.dashboard-navbar > ul#profile-settings-dd > li > button:hover {
             transition: .3s ease-in-out;
             font-weight: 500;
             font-size: 24px;
+        }
+        nav.dashboard-navbar > div.nav-lg >  div#lg-dash-nav-links > a.active-page {
+            background: var(--primary-dark);
+            color: var(--primary-white);
         }
         nav.dashboard-navbar > div.nav-lg >  div#lg-dash-nav-links > a:hover {
             cursor: pointer;
