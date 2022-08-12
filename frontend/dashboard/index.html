@@ -86,9 +86,32 @@
             </li>
         </ul>
     </nav>
-    <main>
-        <!-- please type all your code inside here -->
-    </main>
+    <div id="page">
+        <main>
+
+            <div class="first-main">
+                <h1>Fetch all metadata in your file...</h1>
+                <p class="first-text">With this free online tool you can view, download and manage metadata from files
+                    of arbitrary type. At this moment we support DOCX, IMG, CSV, PDF, JSON extention. </p>
+            </div>
+
+            <form action='' class="form-format">
+
+                <div class="upload-img">
+                    <input type="file" value="" id="file-input" name="file" class="file-in">
+                    <img src="../assets/Upload.svg" alt="Add files icon" class="img-file" />
+                </div>
+
+                <p id="add-par">
+                    Click here to upload a file. You can also drag & drop it here.
+                </p>
+
+                <button class="fetch-btn mt-4 mb-3 mx-auto" id="fetch-btn" type="submit">Fetch</button>
+
+            </form>
+
+        </main>
+    </div>
     <!-- please do not edit the footer -->
     <footer>
         <span>&copy;2022 METAFETCH LTD.</span>

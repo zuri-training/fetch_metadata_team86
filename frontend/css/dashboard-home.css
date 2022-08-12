@@ -1,3 +1,222 @@
 @import "base.css";
 @import "dashboard-nav.css";
 @import "footer.css";
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
+main h1,
+main .first-text,
+main .form-format #add-par {
+  color: #002c33;
+  font-family: "DM Sans";
+  text-align: center;
+}
+
+main h1,
+main .first-text,
+main .form-format #add-par {
+  color: #002c33;
+  font-family: "DM Sans";
+  text-align: center;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  background-color: #f9fcfc;
+}
+
+#page {
+  font-family: "DM Sans", sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 80px 0;
+  position: relative;
+}
+
+main .first-main {
+  max-width: 824px;
+  margin: 0 auto;
+}
+
+main h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 76.8px;
+  margin-bottom: 24px;
+}
+
+main .first-text,
+main .form-format #add-par {
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 2.4rem;
+  padding: 0 14px;
+}
+
+main .add-doc {
+  width: 400px;
+  margin: auto;
+}
+
+main .form-format {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 24px;
+  width: 400px;
+  padding: 24px;
+  margin: auto;
+}
+
+main .form-format .upload-img {
+  width: 104px;
+  height: 104px;
+  margin: auto;
+  position: relative;
+}
+
+main .form-format .upload-img img {
+  width: 62.4px;
+  height: 83.2px;
+  margin: 50% 50% 0 0;
+  -webkit-transform: translate(35%, -50%);
+  transform: translate(35%, -50%);
+}
+
+main .form-format .upload-img .file-in {
+  position: absolute;
+  top: 50%;
+  opacity: 0;
+  z-index: 10;
+}
+
+main .form-format #add-par {
+  padding: 0 10px;
+}
+
+main .form-format .formating {
+  width: 100%;
+  font-weight: 500;
+  color: #002c33;
+  font-size: 1.5rem;
+  padding: 16px 24px;
+  background-color: #f9fcfc;
+  /* border: 1px solid #002c33; */
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+main .form-format .fetch-btn {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #f9fcfc;
+  padding: 16px 51.5px;
+  display: block;
+  margin: auto;
+  background-color: #002c33;
+  border: none;
+  outline: none;
+  -webkit-transition: all ease 1s;
+  transition: all ease 1s;
+  border-radius: 10px;
+  text-align: center;
+}
+
+main .form-format .fetch-btn:hover {
+  background-color: #00515e;
+}
+
+@media screen and (max-width: 1100px) {
+  main .form-format {
+    width: 80%;
+  }
+  main .form-format .fetch-btn {
+    width: 100%;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 16px 24px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  #page {
+    height: 100%;
+    width: 100%;
+  }
+  .first-main {
+    width: 60%;
+    padding: 16px 0;
+  }
+  .first-main h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 38px;
+    padding: 0 8px;
+  }
+  .first-main .first-text,
+  .first-main main .form-format #add-par,
+  main .form-format .first-main #add-par {
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 19px;
+  }
+  .add-doc {
+    width: 80%;
+    padding: 24px;
+  }
+  .add-doc .upload-img {
+    width: 60px;
+    height: 60px;
+    margin: auto;
+  }
+  .add-doc .upload-img img {
+    width: 48px;
+    height: 54px;
+  }
+  .add-doc p {
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 19px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .first-main {
+    width: 80%;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
