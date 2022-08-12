@@ -12,16 +12,24 @@ const
 loginForm = document.querySelector("#login-form"),
 email = document.querySelector("#email"),
 password = document.querySelector("#password");
+// form buttons
 const loginBtn = document.querySelector("#login-btn");
 const togglePwdBtn = document.querySelector("#show-password");
 const togglePwdBtnImg = document.querySelector("#show-password > img");
+
+// toggles the password visibility
 let pwdState = true;
 togglePwdBtn.onclick = ()=> {
   if(password.type === "password") {
     password.type = "text";
-  } 
+    togglePwdBtnImg.src = "../assets/icons/eye-slash-solid.svg";
+  } else {
+    password.type = "password";
+    togglePwdBtnImg.src = "../assets/icons/eye-solid.svg";
+  }
 }
 // controlling the modal
+// opens the loading modal
 const openLoadStatModal = ()=> {
   window.scrollTo(0, 0);
   document.body.style.height = "100vh";
@@ -31,28 +39,27 @@ const openLoadStatModal = ()=> {
   loadStatMsg.innerHTML = "creating your account...";
   loaderCont.style.display = "flex";
 }
+// set success or error state after submission
 const updateLoadStatModal = (stat, message)=> {
   loader.classList.remove("loading");
   loader.classList.add("loaded");
   if(stat === "error") {
     loadStatIcon.src = "../assets/icons/modal/error-icon.svg";
     btnCont.style.display = "flex";
-  } else if(stat === "warning") {
-    loadStatIcon.src = "../assets/icons/modal/warning-icon.svg";
-    btnCont.style.display = "flex";
-  } else if(stat === "success") {
+  }  else if(stat === "success") {
     loadStatIcon.src = "../assets/icons/modal/success-icon.svg";
     btnCont.style.display = "none";
   }
   loadStatMsg.innerHTML = message;
 }
+// when the modal's back button is clicked
 btnOne.onclick = ()=> {
   document.body.style.overflowY = "auto";
   loader.classList.remove("loaded");
   loader.classList.add("loading");
   loaderCont.style.display = "none";
 }
-
+// async function that submits the form
 async function postData(formdata) {
   const { email, password } = formdata;
   var requestOptions = {
@@ -64,7 +71,7 @@ async function postData(formdata) {
     let result = await response.json();
     return result;
 }
-
+// when the login form is submitted
 loginForm.onsubmit = (e)=> {
   e.preventDefault();
   const loginData = {
@@ -74,19 +81,14 @@ loginForm.onsubmit = (e)=> {
   openLoadStatModal();
   postData(loginData)
   .then((result)=> {
-    console.log(result);
     if(result.code === 200) {
-      console.log("success");
-      console.log(result.data, JSON.stringify(result.data));
       localStorage.setItem("metafetchUserData", JSON.stringify(result.data));
       let ld = localStorage.getItem("metafetchUserData");
-      console.log(JSON.parse(ld));
       updateLoadStatModal("success", `Login successful <br> Redirecting you to your dashboard...`);
         setTimeout(() => {
           window.location.replace("http://127.0.0.1:5500/frontend/dashboard/");
-        }, 1000);
+        }, 800);
     } else {
-      console.log("error");
       let property = Object.keys(result)[0];
       updateLoadStatModal("error", result[property][0]);
     }
