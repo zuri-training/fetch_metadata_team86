@@ -1,5 +1,5 @@
 @import "base.css";
-
+@import "loader.css";
 
 nav.form-nav {
     padding: 40px 6.4%;
@@ -67,6 +67,20 @@ section.form-section > form > div:nth-child(2) > div,
 section.form-section > form > div:nth-child(2) > div > input,
 section.form-section > form > div:nth-child(2) > span {
     width: 100%;
+}
+section.form-section > form > div:nth-child(2) > div {
+    position: relative;
+}
+section.form-section > form > div:nth-child(2) > div #show-password {
+    position: absolute;
+    z-index: 999;
+    top: 30%;
+    right: 20px;
+    width: 25px;
+}
+section.form-section > form > div:nth-child(2) > div #show-password > img {
+    width: 100%;
+    height: auto;
 }
 section.form-section > form > div:nth-child(2) > div > input {
     height: 58px;

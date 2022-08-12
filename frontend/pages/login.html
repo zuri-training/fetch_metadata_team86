@@ -29,12 +29,15 @@
                     </div>
                     <div>
                         <input name="password" id="password" type="password" placeholder="Password" required>
+                        <button type="button" id="show-password">
+                            <img src="../assets/icons/eye-solid.svg" alt="">
+                        </button>
                     </div>
                     <span>
                         <a href="#">Forgot Password? Click to reset password</a>
                     </span>
                 </div>
-                <button>Login</button>
+                <button id="login-btn">Login</button>
             </form>
             <div>
                 <img class="form-full-logo" src="../assets/logo-full.svg" alt="metafetch's logo">
@@ -44,6 +47,17 @@
             </div>
         </section>
     </main>
+    <aside>
+        <section id="loader-cont">
+            <div id="loader" class="loading">
+                <img id="stat-icon" img="" alt="">
+            </div>
+            <h2 id="load-stat-msg">creating your account...</h2>
+            <div id="btns">
+                <button type="button" id="btn-1">Go back</button>
+            </div>
+        </section>
+    </aside>
     <script src="../scripts/login.js"></script>
 </body>
 </html>
