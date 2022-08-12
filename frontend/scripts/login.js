@@ -15,9 +15,11 @@ password = document.querySelector("#password");
 const loginBtn = document.querySelector("#login-btn");
 const togglePwdBtn = document.querySelector("#show-password");
 const togglePwdBtnImg = document.querySelector("#show-password > img");
-
+let pwdState = true;
 togglePwdBtn.onclick = ()=> {
-  
+  if(password.type === "password") {
+    password.type = "text";
+  } 
 }
 // controlling the modal
 const openLoadStatModal = ()=> {
