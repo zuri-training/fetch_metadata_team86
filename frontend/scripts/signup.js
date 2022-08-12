@@ -1,5 +1,13 @@
 console.log("sign up connnected");
+// get loader elements
+const loaderCont = document.querySelector("#loader-cont");
+const loader = document.querySelector("#loader");
+const loadStatMsg = document.querySelector("#load-stat-msg");
+const btnCont = document.querySelector("#loader-cont > #btns");
+const btnOne = document.querySelector("#loader-cont > #btns > #btn-1");
+const btnTwo = document.querySelector("#loader-cont > #btns > #btn-2");
 
+// get form elements
 const registerForm = document.querySelector("#registeration-form"),
 userName = document.querySelector("#username"),
 email = document.querySelector("#email"),
