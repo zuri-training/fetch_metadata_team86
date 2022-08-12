@@ -23,6 +23,14 @@ section#loader-cont > div#loader.loading {
     border-top: 14px solid #319197;
     animation: spin-loader 2s linear infinite;
 }
+section#loader-cont > div#loader.loading > img#stat-icon {
+    display: none;
+}
+section#loader-cont > div#loader.loaded > img#stat-icon {
+    display:block;
+    width: 100%;
+    height: auto;
+}
 section#loader-cont > h2#load-stat-msg {
     font-size: 18px;
     color: var(--primary-dark);
