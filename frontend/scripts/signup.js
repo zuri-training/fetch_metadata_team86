@@ -6,7 +6,6 @@ const loadStatMsg = document.querySelector("#load-stat-msg");
 const loadStatIcon = document.querySelector("#stat-icon");
 const btnCont = document.querySelector("#loader-cont > #btns");
 const btnOne = document.querySelector("#loader-cont > #btns > #btn-1");
-const btnTwo = document.querySelector("#loader-cont > #btns > #btn-2");
 
 // get form elements
 const registerForm = document.querySelector("#registeration-form"),
