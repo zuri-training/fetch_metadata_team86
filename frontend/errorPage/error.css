@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap');
+
+/* Styling for for error page*/
+
 * {
     margin: 0;
     padding: 0;
@@ -22,7 +25,7 @@
 .error>div {
     width: 70%;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.15);
-    padding: 93px 39px;
+    padding: 93px 40px;
     text-align: center;
 }
 
@@ -43,6 +46,9 @@
     background-color: #002C33;
     color: white;
 }
+
+
+/* Styling for for error page mobile view*/
 
 @media (max-width:375px) {
     .error>div,
