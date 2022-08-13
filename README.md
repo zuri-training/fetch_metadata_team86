@@ -15,6 +15,7 @@ A web application that allows users to upload files and extract the metadata of 
     - <a href="#api_change_password">Change User Password</a>
     - <a href="#api_user_profile">Update User Profile</a>
     - <a href="#api_forgot_password">Forgot Password</a>
+    
   V. <a href="#api_extract_metadata">Extract MetaData Endpoints</a>
   
 # Design: fetch_metadata_team86 <a name="design"></a>
