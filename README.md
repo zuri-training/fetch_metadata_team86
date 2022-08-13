@@ -4,7 +4,7 @@ A web application that allows users to upload files and extract the metadata of 
 # Table of Content
 1. <a href="#design">Design Resources</a>
 2. <a href="#front_end">Front-End Documentation</a>
-  - <a href="#frontend_file_structure">frontend_file_structure</a>
+   - <a href="#frontend_file_structure">frontend_file_structure</a>
 3. <a href="#back_end">Back-End Documentation</a>
    - <a href="#live_api">Live API Details</a>
    - <a href="#Installing_API">Installing API (back-end)</a>
