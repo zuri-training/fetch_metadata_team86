@@ -1,19 +1,35 @@
 # fetch_metadata_team86
 A web application that allows users to upload files and extract the metadata of the files 
 
-# Design: fetch_metadata_team86
+# Table of Content
+1. <a href="#design">Design Resources</a>
+2. <a href="#front_end">Front-End Documentation</a>
+3. <a href="#back_end">Back-End Documentation</a>
+  I. <a href="#live_api">Live API Details</a>
+  II. <a href="#Installing_API">Installing API (back-end)</a>
+  III. <a href="#storage_settings">Storage Settings</a>
+  IV. <a href="#api_doc">API Endpoint Documentation</a>
+    - <a href="#api_register">Registering New User</a>
+    - <a href="#api_login">Login User</a>
+    - <a href="#api_logout">Logout User</a>
+    - <a href="#api_change_password">Change User Password</a>
+    - <a href="#api_user_profile">Update User Profile</a>
+    - <a href="#api_forgot_password">Forgot Password</a>
+    - <a href="#api_extract_metadata">Extract MetaData Endpoints</a>
+# Design: fetch_metadata_team86 <a name="design"></a>
 - Research plan: https://docs.google.com/document/d/1ho9-msxN7DgEBDQaKtVoe83j9PgcdF4VyfP0Buu9dk0/edit?usp=sharing
 - Figma file: https://www.figma.com/file/EzjbbhuIO996B5JoImNolD
 
 All the design elements can be found in the various pages of the figma file above.
+# Front-End: fetch_metadata_team86 <a name="front_end"></a>
+# Back-End: fetch_metadata_team86 <a name="back_end"></a>
 
-# Back-End: fetch_metadata_team86
 
-## Live API
+## Live API <a name="live_api"></a>
 - https://metafetch86.herokuapp.com/
 - Username: pycodet1@gmail.com
 - Password: ZURI_team_86
-## Installing the API
+## Installing the API <a name="Installing_API"></a>
 
 The API in a django project and can be installed or contributed to. To install:
 
@@ -53,14 +69,14 @@ pip install -r requirements.txt
 - Debugging: A very lovely and easy to use tool was used to debug which is [sentry.io](https://sentry.io/). You can find the settings in the `settings.py` file on the project `fetch_metadata`. Comment them out if you don't want to go through process, but it is worth it.
 
 
-## Media Storage Tool
+## Media Storage Tool <a name="storage_settings"></a>
 - Cloudinary
 - Documentation: [Cloundinary Documentation](https://pypi.org/project/django-cloudinary-storage/#:~:text=Django%20Cloudinary%20Storage%20is%20a,both%20media%20and%20static%20files.)
 
 
-## API documentation
+## API documentation <a name="api_doc"></a>
 
-### Registering New User
+### Registering New User <a name="api_register"></a>
 
 This API end-point would be used to register new users in the metafetch application and login in the user
 immidiatly after registration.
@@ -155,7 +171,7 @@ fetch(`http://127.0.0.1:8000/api/auth/register/?username=${username}&email=${ema
 }
 ```
 
-### Login User
+### Login User <a name="api_login"></a>
 
 This end-point would be used to log in User into the application. It returns an token and the 
 properties of the user who has just been logged-in.
@@ -203,7 +219,7 @@ fetch(`https://metafetch86.herokuapp.com/api/auth/login/?username=${email}&passw
   .catch(error => console.log('error', error));
 ```
 
-### Logout User
+### Logout User <a name="api_logout"></a>
 
 This end-point would be used to log a User out from the application. There is nothing serious goining 
 on here. The User Token must be passed along as an header to know which user wants to logout. The front-end should remove the Token from where ever it is saved on the front-end or browser when it returns a success code `200`. 
@@ -245,7 +261,7 @@ fetch("http://127.0.0.1:8000/api/auth/logout/", requestOptions)
 ```
 
 
-### Change Password User
+### Change User Password <a name="api_change_password"></a>
 
 This gives an authenticated user the oppotunity to change password.
 
@@ -297,7 +313,7 @@ fetch(`http://127.0.0.1:8000/api/auth/change-password/?old_password=${OLD_PASSWO
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
 ```
-### Change User Profile
+### Update User Profile <a name="api_user_profile"></a>
 
 - This gives an authenticated user the previledge to change their `first_name`, `last_name` and `email`.
 
@@ -346,7 +362,7 @@ fetch("http://127.0.0.1:8000/api/auth/update_profile/?email=&first_name=taiwo&la
   .catch(error => console.log('error', error));
 ```
 
-## Forgot Password
+### Forgot Password <a name="api_forgot_password"></a>
 This operation requires 2 API endpoints, one to send a safe token to email, and the second to change password based on the token sent to email.
 This gives an authenticated user the oppotunity to change password.
 
@@ -480,7 +496,7 @@ fetch("http://127.0.0.1:8000/api/auth/password_reset/confirm/", requestOptions)
 ```
 
 
-# Extract Meta Data API Endpoints
+# Extract Meta Data API Endpoints <a name="api_extract_metadata"></a>
 
 - /api/extract_metadata/image_meta_extract/
 > The above end-point can be used to extract metadate from images of type 'jpeg', 'jpg', 'png', tiff only

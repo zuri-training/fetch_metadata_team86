@@ -50,7 +50,8 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+CORS_ORIGIN_ALLOW_ALL = True
 
 SITE_ID = 1
 
@@ -80,6 +81,7 @@ INSTALLED_APPS = [
     'anymail',
     'cloudinary_storage',
     'cloudinary',
+    'corsheaders',
 
     # django custom apps
     'metafetch_api',
@@ -97,6 +99,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 
     # accounts app MIDDLEWARE
     "account.middleware.LocaleMiddleware",
