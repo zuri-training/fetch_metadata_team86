@@ -106,7 +106,7 @@ immidiatly after registration.
 ```
 - Optional Fields
 > - `username`
-> - `firt_name`
+> - `first_name`
 > - `last_name`
 
 - Sample Responce of stattus `400` - Bad Request
