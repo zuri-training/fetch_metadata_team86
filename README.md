@@ -15,7 +15,8 @@ A web application that allows users to upload files and extract the metadata of 
     - <a href="#api_change_password">Change User Password</a>
     - <a href="#api_user_profile">Update User Profile</a>
     - <a href="#api_forgot_password">Forgot Password</a>
-    - <a href="#api_extract_metadata">Extract MetaData Endpoints</a>
+  V. <a href="#api_extract_metadata">Extract MetaData Endpoints</a>
+  
 # Design: fetch_metadata_team86 <a name="design"></a>
 - Research plan: https://docs.google.com/document/d/1ho9-msxN7DgEBDQaKtVoe83j9PgcdF4VyfP0Buu9dk0/edit?usp=sharing
 - Figma file: https://www.figma.com/file/EzjbbhuIO996B5JoImNolD
