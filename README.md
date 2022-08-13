@@ -4,6 +4,7 @@ A web application that allows users to upload files and extract the metadata of 
 # Table of Content
 1. <a href="#design">Design Resources</a>
 2. <a href="#front_end">Front-End Documentation</a>
+  - <a href="#frontend_file_structure">frontend_file_structure</a>
 3. <a href="#back_end">Back-End Documentation</a>
    - <a href="#live_api">Live API Details</a>
    - <a href="#Installing_API">Installing API (back-end)</a>
@@ -24,6 +25,18 @@ A web application that allows users to upload files and extract the metadata of 
 - Figma file: https://www.figma.com/file/EzjbbhuIO996B5JoImNolD
 
 All the design elements can be found in the various pages of the figma file above.
+# Front-End: fetch_metadata_team86 <a name="front_end"></a>
+## File structure <a name="frontend_file_structure"></a>
+the frontend implementation can be found in the frontend folder on our repository<br>
+it is organised into the following folders and file:
+- the index.html file(this is the landing page for our website).
+- the assets folder(this contains all images/icons used in our website)
+- the components folder(this folder has all html implementation of repeated properties of our website e.g navbar, header, it will be deleted once the site is looking great).
+- the css folder (this is where all CSS files for the website are stored).
+- the dashboard folder (this is where all the user's dashboard html files, the page they are redirected to after they login are stored).
+- the pages folder (this is where all other html pages, apart from the landing page and the dashboard pages are stored);
+- the scripts folder (this is where all the JS files used in the website are stored).
+
 # Back-End: fetch_metadata_team86 <a name="back_end"></a>
 
 
