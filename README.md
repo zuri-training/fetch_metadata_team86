@@ -27,7 +27,7 @@ A web application that allows users to upload files and extract the metadata of 
 All the design elements can be found in the various pages of the figma file above.
 # Front-End: fetch_metadata_team86 <a name="front_end"></a>
 ## File structure <a name="frontend_file_structure"></a>
-the frontend implementation can be found in the frontend folder of our repository<br>
+the frontend implementation can be found in the frontend folder on our repository<br>
 it is organised into the following folders and file:
 - the index.html file(this is the landing page for our website).
 - the assets folder(this contains all images/icons used in our website)
