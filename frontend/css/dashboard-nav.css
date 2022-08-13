@@ -3,7 +3,6 @@ nav.dashboard-navbar {
     position: relative;
     padding: 40px 6.4%;
     background: transparent;
-    margin-bottom: 500px;
 }
 nav.dashboard-navbar a:hover {
     cursor: pointer;
