@@ -9,12 +9,13 @@ A web application that allows users to upload files and extract the metadata of 
    - <a href="#Installing_API">Installing API (back-end)</a>
    - <a href="#storage_settings">Storage Settings</a>
    - <a href="#api_doc">API Endpoint Documentation</a>
-    -- <a href="#api_register">Registering New User</a>
-    -- <a href="#api_login">Login User</a>
-    -- <a href="#api_logout">Logout User</a>
-    -- <a href="#api_change_password">Change User Password</a>
-    -- <a href="#api_user_profile">Update User Profile</a>
-    -- <a href="#api_forgot_password">Forgot Password</a>
+   
+    - <a href="#api_register">Registering New User</a>
+    - <a href="#api_login">Login User</a>
+    - <a href="#api_logout">Logout User</a>
+    - <a href="#api_change_password">Change User Password</a>
+    - <a href="#api_user_profile">Update User Profile</a>
+    - <a href="#api_forgot_password">Forgot Password</a>
     
    - <a href="#api_extract_metadata">Extract MetaData Endpoints</a>
   
