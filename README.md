@@ -5,18 +5,18 @@ A web application that allows users to upload files and extract the metadata of 
 1. <a href="#design">Design Resources</a>
 2. <a href="#front_end">Front-End Documentation</a>
 3. <a href="#back_end">Back-End Documentation</a>
-  I. <a href="#live_api">Live API Details</a>
-  II. <a href="#Installing_API">Installing API (back-end)</a>
-  III. <a href="#storage_settings">Storage Settings</a>
-  IV. <a href="#api_doc">API Endpoint Documentation</a>
-    - <a href="#api_register">Registering New User</a>
-    - <a href="#api_login">Login User</a>
-    - <a href="#api_logout">Logout User</a>
-    - <a href="#api_change_password">Change User Password</a>
-    - <a href="#api_user_profile">Update User Profile</a>
-    - <a href="#api_forgot_password">Forgot Password</a>
+   - <a href="#live_api">Live API Details</a>
+   - <a href="#Installing_API">Installing API (back-end)</a>
+   - <a href="#storage_settings">Storage Settings</a>
+   - <a href="#api_doc">API Endpoint Documentation</a>
+    -- <a href="#api_register">Registering New User</a>
+    -- <a href="#api_login">Login User</a>
+    -- <a href="#api_logout">Logout User</a>
+    -- <a href="#api_change_password">Change User Password</a>
+    -- <a href="#api_user_profile">Update User Profile</a>
+    -- <a href="#api_forgot_password">Forgot Password</a>
     
-  V. <a href="#api_extract_metadata">Extract MetaData Endpoints</a>
+   - <a href="#api_extract_metadata">Extract MetaData Endpoints</a>
   
 # Design: fetch_metadata_team86 <a name="design"></a>
 - Research plan: https://docs.google.com/document/d/1ho9-msxN7DgEBDQaKtVoe83j9PgcdF4VyfP0Buu9dk0/edit?usp=sharing
