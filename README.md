@@ -22,7 +22,6 @@ A web application that allows users to upload files and extract the metadata of 
 - Figma file: https://www.figma.com/file/EzjbbhuIO996B5JoImNolD
 
 All the design elements can be found in the various pages of the figma file above.
-# Front-End: fetch_metadata_team86 <a name="front_end"></a>
 # Back-End: fetch_metadata_team86 <a name="back_end"></a>
 
 
