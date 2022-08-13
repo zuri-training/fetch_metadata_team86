@@ -52,6 +52,10 @@ pip install -r requirements.txt
 ```
 - Debugging: A very lovely and easy to use tool was used to debug which is [sentry.io](https://sentry.io/). You can find the settings in the `settings.py` file on the project `fetch_metadata`. Comment them out if you don't want to go through process, but it is worth it.
 
+After all packages have been installed in the active virtual environment, change your directory to the `/backend` folder and run the command
+```python
+python manage.py runserver
+```
 
 ## Media Storage Tool
 - Cloudinary
