@@ -37,7 +37,6 @@ it is organised into the following folders and file:
 - the pages folder (this is where all other html pages, apart from the landing page and the dashboard pages are stored);
 - the scripts folder (this is where all the JS files used in the website are stored).
 
-All 
 # Back-End: fetch_metadata_team86 <a name="back_end"></a>
 
 
