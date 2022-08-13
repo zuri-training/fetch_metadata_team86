@@ -72,7 +72,7 @@ class CustomAuthToken(ObtainAuthToken):
                 "user_id": user.pk,
                 'token': token.key,
                 'username': user.username,
-                'firt_name': user.first_name,
+                'first_name': user.first_name,
                 'last_name': user.last_name,
                 'email': user.email,
                 'user_profile_pics': user_profile,
@@ -120,6 +120,20 @@ def register(request):
         raise serializers.ValidationError(
             serializer.errors
         )
+
+# @api_view(["GET"])
+# def token_login(request):
+#     credential = request.data or request.query_params
+
+#     serializer = LoginUserSerializer(data= credential)
+#     if serializer.is_valid():
+#         user = Token.user
+#         print(user.username)
+#     else:
+#         # raise validations error
+#         raise serializers.ValidationError(
+#             serializer.errors
+#         )
 
 
 @api_view(["GET"])

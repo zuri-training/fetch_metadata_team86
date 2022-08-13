@@ -102,6 +102,34 @@ class RegisterUserSerializer(serializers.ModelSerializer):
 
 from rest_framework import serializers
 
+# class LoginUserSerializer(serializers.Serializer):
+#     model = CustomUser
+#     token = serializers.CharField(max_length=50)
+
+#     def validate(self, data):
+         
+#         # get the password and new_password from the data
+#         token = data.get('token')
+
+         
+#         errors = dict() 
+#         try:
+#             # validate the password and catch the exception
+#             if not CustomUser.auth_token.ob (key=token).exists():
+#                 raise serializers.ValidationError({
+#                     'token': 'Credentials provided is invalid!'
+#                 })
+
+#         # the exception raised here is different than serializers.ValidationError
+#         except exceptions.ValidationError as e:
+#             errors['password'] = list(e.messages)
+         
+#         if errors:
+#             raise serializers.ValidationError(errors)
+          
+#         return super(ChangePasswordSerializer, self).validate(data)
+
+
 class ChangePasswordSerializer(serializers.Serializer):
     model = CustomUser
 

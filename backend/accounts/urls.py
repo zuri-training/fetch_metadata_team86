@@ -9,6 +9,7 @@ urlpatterns = [
     path('users/', ListUsers.as_view()),
     path('register/', views.register),
     path('login/', CustomAuthToken.as_view()),
+#     path('user_login/', views.token_login),
     path('password_reset/', include('django_rest_passwordreset.urls', namespace='password_reset')),
     path('change_password/',
          ChangePasswordView.as_view(), name='change-password'),
