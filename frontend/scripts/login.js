@@ -36,7 +36,7 @@ const openLoadStatModal = ()=> {
   document.body.style.overflow = "hidden";
   loader.classList.add("loading");
   btnCont.style.display = "none";
-  loadStatMsg.innerHTML = "creating your account...";
+  loadStatMsg.innerHTML = "logging you into your account...";
   loaderCont.style.display = "flex";
 }
 // set success or error state after submission
