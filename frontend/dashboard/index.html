@@ -95,10 +95,11 @@
                     of arbitrary type. At this moment we support DOCX, IMG, CSV, PDF, JSON extention. </p>
             </div>
 
-            <form action='' class="form-format">
+            <form action='' class="form-format" enctype="multipart/form-data">
 
                 <div class="upload-img">
-                    <input type="file" value="" id="file-input" name="file" class="file-in">
+                    <input type="file" value="" id="file-input" name="file" class="file-in"
+                        accept=".jpeg,.jpg,.tiff,.png,.doc,.docx,.pdf,.pptx,.xlsx,.js">
                     <img src="../assets/Upload.svg" alt="Add files icon" class="img-file" />
                 </div>
 
@@ -112,6 +113,18 @@
 
         </main>
     </div>
+    <!-- all modals go here -->
+    <aside>
+        <section id="loader-cont">
+            <div id="loader" class="loading">
+                <img id="stat-icon" img="" alt="">
+            </div>
+            <h2 id="load-stat-msg">logging into your account...</h2>
+            <div id="btns">
+                <button type="button" id="btn-1">Go back</button>
+            </div>
+        </section>
+    </aside>
     <!-- please do not edit the footer -->
     <footer>
         <span>&copy;2022 METAFETCH LTD.</span>
@@ -123,6 +136,7 @@
         also do not add any other JS code to it, create another file for that.
     -->
     <script src="../scripts/dashboard-header.js"></script>
+    <script src="../scripts/extractor.js"></script>
 </body>
 
 </html>

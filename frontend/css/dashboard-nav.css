@@ -50,7 +50,7 @@ nav.dashboard-navbar > ul#profile-settings-dd {
     top: 110px;
     right: 6.5%;
     border: 1px solid var(--primary-dark);
-    display: flex;
+    display: none;
     flex-flow: column nowrap;
     align-items: flex-start;
     z-index: 99;
@@ -89,6 +89,7 @@ nav.dashboard-navbar > ul#profile-settings-dd > li > button:hover {
     color: var(--primary-white);
 }
 #mb-dash-nav-links {
+    display: none;
     position: absolute;
     width: 100%;
     top: 0;
