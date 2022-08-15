@@ -311,3 +311,7 @@ main .form-format .convert-btn:hover {
     }
   }
   
+  .no-value{
+    opacity: 0.5;
+    /* pointer-events: none; */
+  }
