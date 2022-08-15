@@ -95,11 +95,11 @@
                     of arbitrary type. At this moment we support DOCX, IMG, CSV, PDF, JSON extention. </p>
             </div>
 
-            <form action='' class="form-format" enctype="multipart/form-data">
+            <form action='' class="form-format" enctype="multipart/form-data" id="get-file-form">
 
                 <div class="upload-img">
                     <input type="file" value="" id="file-input" name="file" class="file-in"
-                        accept=".jpeg,.jpg,.tiff,.png,.doc,.docx,.pdf,.pptx,.xlsx">
+                        accept=".jpeg,.jpg,.tiff,.png,.doc,.docx,.pdf,.pptx,.xlsx" required>
                     <img src="../assets/Upload.svg" alt="Add files icon" class="img-file" />
                 </div>
 
@@ -107,7 +107,7 @@
                     Click here to upload a file. You can also drag & drop it here.
                 </p>
 
-                <button class="fetch-btn mt-4 mb-3 mx-auto" id="fetch-btn" type="submit" disabled>Fetch</button>
+                <button class="fetch-btn mt-4 mb-3 mx-auto" id="fetch-btn" type="submit">Fetch</button>
 
             </form>
 
