@@ -28,6 +28,6 @@ fileInput.onchange = (e)=> {
 
 
 
-  // /api/extract_metadata/flat_file_metadata/
+//   /api/extract_metadata/flat_file_metadata/
 
-  // /api/extract_metadata/image_meta_extract/
+//   /api/extract_metadata/image_meta_extract/
