@@ -63,7 +63,7 @@ getFileForm.onsubmit = (e)=> {
             }
             resultCont = `
                     <h1 style="text-align: center;">Your metadata</h1>
-                    <div style="width: 60%; max-width: 300px; display: flex; flex-flow: column nowrap; gap: 20px; align-items: flex-start;">${resultTemplate}</div>
+                    <div style="width: 100%; max-width: 450px; display: flex; flex-flow: column nowrap; gap: 40px; align-items: flex-start;">${resultTemplate}</div>
                 `;
             console.log(resultTemplate);
             updateLoadStatModal("success", "file upload successful!");
