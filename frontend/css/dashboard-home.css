@@ -1,5 +1,6 @@
 @import "base.css";
 @import "dashboard-nav.css";
+@import "loader.css";
 @import "footer.css";
 
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
