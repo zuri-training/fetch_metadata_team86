@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Convert file | METAFETCH</title>
     <link rel="shortcut icon" href="../assets/logo.svg" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="../css/B-files/bootstrap.css"> -->
     <link rel="stylesheet" href="../css/convert-it.css">
 </head>
 
@@ -88,7 +89,59 @@
     </nav>
     <main>
         <!-- please type all your code inside here -->
+        <div class="first-main">
+            <h1>Convert your files to a different format with ease</h1>
+            <p class="first-text">This free online file converter lets you convert media easy and fast from one format to another.</p>
+        </div>
+<form action='' class="form-format">
+
+
+<div class="upload-img">
+    <input type="file" value="" id="file-input" name="file" class="file-in">
+    <img src="../assets/Upload.svg" alt="Add files icon" class="img-file"/>
+</div>
+
+<p id="add-par">
+    Click here to upload a file. You can also drag & drop it here.
+</p>
+
+    <select name="format" id="format" class="formatting">
+        <option value="" class="select">Select a format</option>
+            <option value="PDF">PDF</option>
+            <option value="JPEG">JPEG</option>
+            <option value="DOC">DOC</option>
+    </select>
+    <button class="convert-btn mt-4 mb-3 mx-auto"  id="conv-btn"  type="submit" >Convert</button>
+</form> 
+        
+
+        
+   
     </main>
+
+<!-- This is the modal that appears when the user clicks the convert button  -->
+    <!-- <div class="converting  d-none">
+        <div class="conv-modal ">
+            <div class="modal-conv">
+                <span class="visually-hidden vi-text">Converting File</span>
+            </div>
+            <p class="conv-text">Converting file...</p> -->
+
+            <!-- This is the second modal that appears on complete conversion. -->
+
+                                                    <!-- <div class="complete">
+
+                <img src="../images/Conv-complete.svg" alt="Completed conversion" class="success"/>
+                <p class="conv-text">Convertion complete</p> 
+            </div> -->
+ 
+            <!-- Please note that both modals share the same parent container this end the complete conversion modal but the parent container have not been closed. Just be cautious when trying to render it.-->
+            <!-- <button id="download">Download</button> -->
+        <!-- </div>
+    </div> -->
+    <!-- The modals end here -->
+
+
     <!-- please do not edit the footer -->
     <footer>
         <span>&copy;2022 METAFETCH LTD.</span>
@@ -99,6 +152,8 @@
         please do not delete this JS script.
         also do not add any other JS code to it, create another file for that.
     -->
+    <!-- <script src="../scripts/B-files/bootstrap.bundle.js"></script> -->
+    <script src="../scripts/convert_file.js"></script>
     <script src="../scripts/dashboard-header.js"></script>
 </body>
 
