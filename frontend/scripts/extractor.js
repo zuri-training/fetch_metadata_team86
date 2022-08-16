@@ -9,6 +9,11 @@ fileInput.onchange = (e)=> {
 }
 
 const getJPEGMetadata = async(fileObj, filePath)=> {
+    // checks the file type from the extension
+    let valueArr = filePath.split(".");
+    let fileExtension = valueArr[valueArr.length -1];
+    console.log(fileExtension);
+
     let myHeaders = new Headers();
     myHeaders.append("Authorization", `token ${token}`);
 
@@ -22,10 +27,7 @@ const getJPEGMetadata = async(fileObj, filePath)=> {
     redirect: 'follow'
     };
 
-    // checks the file type from the extension
-    let valueArr = filePath.split(".");
-    let fileExtension = valueArr[valueArr.length -1];
-    console.log(fileExtension);
+   
     // if its an image file, this runs
     if(fileExtension === "jpg" || fileExtension == "jpeg" || fileExtension == "png" || fileExtension == "tiff") {
         let response = await fetch("https://metafetch86.herokuapp.com/api/extract_metadata/image_meta_extract/", requestOptions);
