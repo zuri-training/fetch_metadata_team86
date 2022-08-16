@@ -86,7 +86,7 @@ loginForm.onsubmit = (e)=> {
       let ld = localStorage.getItem("metafetchUserData");
       updateLoadStatModal("success", `Login successful <br> Redirecting you to your dashboard...`);
         setTimeout(() => {
-          window.location.replace("http://127.0.0.1:5500/frontend/dashboard/");
+          window.location.replace("../dashboard/");
         }, 800);
     } else {
       let property = Object.keys(result)[0];

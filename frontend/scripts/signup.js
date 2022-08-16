@@ -110,7 +110,7 @@ registerForm.onsubmit = (e)=> {
     if(result.code === 200) {
       updateLoadStatModal("success", `This user account has been created <br> Redirecting you to the login page...`);
       setTimeout(() => {
-        window.location.replace("http://127.0.0.1:5500/frontend/pages/login.html");
+        window.location.replace("login.html");
       }, 800);
     } else {
       let property = Object.keys(result)[0];

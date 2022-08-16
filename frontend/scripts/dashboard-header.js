@@ -135,7 +135,7 @@ logoutBtn.onclick = ()=> {
             localStorage.removeItem("metafetchUserData");
             updateLoadStatModal("success", `Logout successful <br> Redirecting you to the landing page...`);
             setTimeout(() => {
-                window.location.replace("http://127.0.0.1:5500/frontend/");
+                window.location.replace("../");
             }, 800);
         } else {
             updateLoadStatModal("error", "error logging you out <br> check your connection and try again");
