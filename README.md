@@ -553,7 +553,7 @@ var formdata = new FormData();
 formdata.append("file", fileInput.files[0], "/C:/Users/Adegite/Zuri training/Project Phase/fetch_metadata_team86-1/backend/modules/test_files/DSC_0911.JPG");
 
 var requestOptions = {
-  method: 'GET',
+  method: 'POST',
   headers: myHeaders,
   body: formdata,
   redirect: 'follow'
@@ -564,29 +564,11 @@ fetch("https://metafetch86.herokuapp.com/api/extract_metadata/image_meta_extract
   .then(result => console.log(result))
 ```
 
-- **Get all document associated to the current User**
-- Endpoint: /api/extract_metadata/get_files/
-
-- **JavaScript Sample Code**
-```javascript
-var myHeaders = new Headers();
-myHeaders.append("Authorization", "token 23c1ad67a97ea9a6e5ed0f9a61a5cfb450689");
-
-var requestOptions = {
-  method: 'POST',
-  headers: myHeaders,
-  redirect: 'follow'
-};
-
-fetch("https://metafetch86.herokuapp.com/api/extract_metadata/get_files/", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
-```
 
 ### For Flat files Metadata extraction
 It is similar to images but requires an aditional parameter `file_type`, which is to be passed to the body.
 
+**NOTE:** file_type for both docx and doc should be passed as **doc**. Others by their file extention
 - **JavaScript Sample Code**
 ```javascript
 var myHeaders = new Headers();
@@ -608,6 +590,27 @@ fetch("https://metafetch86.herokuapp.com/api/extract_metadata/flat_file_metadata
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
 ```
+
+- **Get all document associated to the current User**
+- Endpoint: /api/extract_metadata/get_files/
+
+- **JavaScript Sample Code**
+```javascript
+var myHeaders = new Headers();
+myHeaders.append("Authorization", "token 23c1ad67a97ea9a6e5ed0f9a61a5cfb450689");
+
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+
+fetch("https://metafetch86.herokuapp.com/api/extract_metadata/get_files/", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+```
+
 - **TO Delete a File**
 
 - EndPoint: /api/extract_metadata/delete_file/{file_id}/
