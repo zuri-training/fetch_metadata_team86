@@ -4,6 +4,7 @@ A web application that allows users to upload files and extract the metadata of 
 # Table of Content
 1. <a href="#design">Design Resources</a>
 2. <a href="#front_end">Front-End Documentation</a>
+   - <a href="#frontend_live_link">Frontend Live Link</a>
    - <a href="#frontend_file_structure">frontend_file_structure</a>
 3. <a href="#back_end">Back-End Documentation</a>
    - <a href="#live_api">Live API Details</a>
@@ -26,6 +27,10 @@ A web application that allows users to upload files and extract the metadata of 
 
 All the design elements can be found in the various pages of the figma file above.
 # Front-End: fetch_metadata_team86 <a name="front_end"></a>
+
+## Front-End LIVE link <a name="frontend_live_link"></a>
+https://metafetch.netlify.com
+
 ## File structure <a name="frontend_file_structure"></a>
 the frontend implementation can be found in the frontend folder on our repository<br>
 it is organised into the following folders and file:
@@ -554,7 +559,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("https://metafetch86.herokuapp.com/api/extract_metadata/jpg_meta_extract/", requestOptions)
+fetch("https://metafetch86.herokuapp.com/api/extract_metadata/image_meta_extract/", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
 ```
@@ -568,7 +573,7 @@ var myHeaders = new Headers();
 myHeaders.append("Authorization", "token 23c1ad67a97ea9a6e5ed0f9a61a5cfb450689");
 
 var requestOptions = {
-  method: 'GET',
+  method: 'POST',
   headers: myHeaders,
   redirect: 'follow'
 };
@@ -579,6 +584,30 @@ fetch("https://metafetch86.herokuapp.com/api/extract_metadata/get_files/", reque
   .catch(error => console.log('error', error));
 ```
 
+### For Flat files Metadata extraction
+It is similar to images but requires an aditional parameter `file_type`, which is to be passed to the body.
+
+- **JavaScript Sample Code**
+```javascript
+var myHeaders = new Headers();
+myHeaders.append("Authorization", "token 20de6064d30901d69e400106ad41a1f26fe9e695");
+
+var formdata = new FormData();
+formdata.append("file", fileInput.files[0], "/C:/Users/Adegite/Zuri training/Project Phase/fetch_metadata_team86-1/backend/modules/test_files/21-Day spiritual bootcamp Instructional manual.docx");
+formdata.append("file_type", "doc");
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: formdata,
+  redirect: 'follow'
+};
+
+fetch("https://metafetch86.herokuapp.com/api/extract_metadata/flat_file_metadata/", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+```
 - **TO Delete a File**
 
 - EndPoint: /api/extract_metadata/delete_file/{file_id}/
